@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Artefatos locais gerados pelos notebooks
+dados/principal/ml_aluno/
+dados/complementar/censo_escolar_2023/
+.mplconfig/
