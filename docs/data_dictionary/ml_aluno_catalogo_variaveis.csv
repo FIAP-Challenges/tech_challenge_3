@@ -1,0 +1,20 @@
+Variável,Tipo,Fonte,Descrição,Categoria
+id_aluno,str,ml_aluno,Identificador único do aluno,Identificador
+id_escola,str,ml_aluno,Identificador único da escola,Identificador
+id_municipio,str,ml_aluno,Código oficial do município (IBGE),Territorial
+nome_municipio,str,ml_aluno,Nome do município,Territorial
+sigla_uf,str,ml_aluno,Sigla da Unidade Federativa,Territorial
+ano_referencia,int32,ml_aluno,Ano de referência da avaliação,Temporal
+serie,int32,ml_aluno,Série escolar do estudante,Acadêmica
+rede,int32,ml_aluno,Código da rede de ensino,Administrativa
+rede_descricao,str,ml_aluno,Descrição da rede de ensino,Administrativa
+caderno,str,ml_aluno,Código do caderno da avaliação,Avaliação
+presenca,int32,ml_aluno,Indica a presença do aluno na avaliação,Avaliação
+preenchimento_caderno,int32,ml_aluno,Situação de preenchimento do caderno,Avaliação
+proficiencia,float64,ml_aluno,Proficiência obtida pelo aluno,Desempenho
+peso_aluno,float64,ml_aluno,Peso amostral atribuído ao aluno,Amostragem
+taxa_alfabetizacao_municipio_ano_anterior,float64,ml_aluno,Taxa municipal de alfabetização do ano anterior,Indicador Educacional
+media_portugues_municipio_ano_anterior,float64,ml_aluno,Média municipal de Língua Portuguesa do ano anterior,Indicador Educacional
+dataset_split,str,ml_aluno,"Conjunto destinado ao treino, teste ou validação",Modelagem
+alfabetizado,int32,ml_aluno,Classificação do estudante quanto à alfabetização,Target
+processed_at,datetime64[ns],ml_aluno,Data/hora de processamento da Feature Table,Controle Técnico
