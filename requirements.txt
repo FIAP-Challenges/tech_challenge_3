@@ -3,3 +3,4 @@ pyarrow
 openpyxl
 matplotlib
 ipykernel
+polars[rtcompat]
