@@ -1,0 +1,19 @@
+ARG RAPIDS_IMAGE=rapidsai/base:25.10-cuda12.9-py3.12
+FROM ${RAPIDS_IMAGE}
+
+ENV TC3_USAR_GPU=1 \
+    TC3_EXECUTAR_SHAP=0
+
+WORKDIR /workspace
+COPY requirements-gpu.txt /tmp/requirements-gpu.txt
+RUN python -m pip install --no-cache-dir -r /tmp/requirements-gpu.txt
+# Falha durante o build caso a imagem RAPIDS deixe de fornecer a versão
+# validada na execução oficial, evitando mudança silenciosa de ambiente.
+RUN python -c "import sklearn; assert sklearn.__version__ == '1.7.2', f'scikit-learn inesperado: {sklearn.__version__}'"
+RUN python -m ipykernel install \
+    --sys-prefix \
+    --name tc3-gpu \
+    --display-name "Python 3 (tc3-gpu)"
+COPY . /workspace
+EXPOSE 8888
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--ServerApp.token="]

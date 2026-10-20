@@ -1,0 +1,15 @@
+# O RAPIDS/cuML vem da imagem-base rapidsai/base:25.10-cuda12.9-py3.12.
+# Essa imagem fornece scikit-learn==1.7.2 integrado ao cuml.accel.
+# Não reinstalar scikit-learn aqui: outra versão pode quebrar a aceleração
+# ou provocar fallback silencioso para CPU.
+numpy>=2.0,<3
+polars==2.0.0
+pyarrow>=18,<23
+openpyxl>=3.1,<4
+matplotlib>=3.9,<4
+seaborn>=0.13,<0.14
+shap>=0.48,<0.51
+psutil>=6,<8
+threadpoolctl>=3.5,<4
+ipykernel>=6.29,<7
+jupyterlab>=4.3,<5

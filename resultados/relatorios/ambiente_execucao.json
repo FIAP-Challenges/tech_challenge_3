@@ -1,0 +1,96 @@
+{
+  "gerado_em_utc": "2026-10-20T23:01:47.290896+00:00",
+  "python": "3.12.11",
+  "scikit_learn": "1.7.2",
+  "polars": "2.0.0",
+  "backend_ml": "RAPIDS cuML — NVIDIA GeForce RTX 3050 6GB Laptop GPU (6.0 GB de VRAM)",
+  "seed": 42,
+  "modelo": "Random Forest",
+  "parametros": {
+    "n_estimators": 150,
+    "min_samples_leaf": 40,
+    "max_features": "sqrt",
+    "max_depth": 20
+  },
+  "features": [
+    "sigla_uf",
+    "rede",
+    "ano_referencia",
+    "valor_bolsa_familia__signed_log1p",
+    "valor_fundeb__signed_log1p",
+    "valor_receitas__signed_log1p",
+    "valor_pib_per_capita__signed_log1p",
+    "media_inse",
+    "in_biblioteca_sala_leitura",
+    "in_laboratorio_informatica",
+    "in_quadra_esportes",
+    "in_agua_rede_publica",
+    "in_energia_rede_publica",
+    "in_esgoto_rede_publica",
+    "in_internet",
+    "in_banda_larga",
+    "cobertura_financeira_ausente",
+    "cobertura_inse_ausente"
+  ],
+  "teste_reutilizado_para_tuning": false,
+  "politica_temporal_fontes": [
+    {
+      "fonte": "Bolsa Família",
+      "anos_disponiveis": "2023-2024",
+      "regra": "correspondência anual exata"
+    },
+    {
+      "fonte": "Fundeb",
+      "anos_disponiveis": "2023-2024",
+      "regra": "correspondência anual exata"
+    },
+    {
+      "fonte": "Receitas",
+      "anos_disponiveis": "2023-2024",
+      "regra": "correspondência anual exata"
+    },
+    {
+      "fonte": "PIB",
+      "anos_disponiveis": "2022-2023",
+      "regra": "defasagem de um ano: 2022→2023 e 2023→2024"
+    },
+    {
+      "fonte": "INSE",
+      "anos_disponiveis": "2023",
+      "regra": "snapshot contextual 2023; sem interpretação temporal"
+    },
+    {
+      "fonte": "Censo Escolar",
+      "anos_disponiveis": "2023",
+      "regra": "snapshot contextual 2023; sem interpretação temporal"
+    }
+  ],
+  "sensibilidade_sigla_uf": [
+    {
+      "metrica": "roc_auc",
+      "com_sigla_uf": 0.6704827344710891,
+      "sem_sigla_uf": 0.6756693568750569,
+      "diferenca_com_menos_sem": -0.005186622403967833
+    },
+    {
+      "metrica": "average_precision",
+      "com_sigla_uf": 0.684096847751993,
+      "sem_sigla_uf": 0.6910217953558587,
+      "diferenca_com_menos_sem": -0.00692494760386575
+    },
+    {
+      "metrica": "balanced_accuracy",
+      "com_sigla_uf": 0.619615268546235,
+      "sem_sigla_uf": 0.6232438662432711,
+      "diferenca_com_menos_sem": -0.003628597697036051
+    },
+    {
+      "metrica": "f1",
+      "com_sigla_uf": 0.6391945404544608,
+      "sem_sigla_uf": 0.636279023384912,
+      "diferenca_com_menos_sem": 0.0029155170695487342
+    }
+  ],
+  "shap_executado": true,
+  "amostra_shap": 100
+}

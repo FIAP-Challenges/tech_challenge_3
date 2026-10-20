@@ -1,0 +1,75 @@
+{
+  "schema_resultado": 2,
+  "fase": 6,
+  "teste_utilizado": false,
+  "criterio_primario": "roc_auc_validacao",
+  "limiar_empate_tecnico": 0.005,
+  "empate_tecnico": true,
+  "lider_holdout_validacao": "Random Forest",
+  "diferenca_auc_primeiro_segundo": 0.0006804832735634037,
+  "modelo_selecionado": "Random Forest",
+  "ticket_selecionado": "TC3-61",
+  "tipo_decisao": "decisão colegiada entre modelos tecnicamente empatados",
+  "momento_decisao": "antes do acesso ao conjunto de teste",
+  "justificativas_selecao": [
+    "Gradient Boosting e Random Forest ficaram dentro do limite pré-definido de empate técnico de 0,005 no holdout de validação.",
+    "O Random Forest apresentou a maior média de ROC AUC na validação cruzada agrupada.",
+    "O Random Forest apresentou a maior média de ROC AUC na validação cruzada agrupada, menor gap entre treino e validação e F1 ligeiramente superior ao Gradient Boosting.",
+    "A decisão foi colegiada e registrada antes de qualquer acesso ao conjunto de teste."
+  ],
+  "metricas_modelo_selecionado": {
+    "posicao": 1,
+    "ticket": "TC3-61",
+    "modelo": "Random Forest",
+    "roc_auc_cv": 0.6573739359498442,
+    "desvio_auc_cv": 0.0017129761399933237,
+    "roc_auc_validacao": 0.6564606248185223,
+    "average_precision": 0.6656456375572108,
+    "balanced_accuracy": 0.6108181248833052,
+    "f1": 0.6345998460032131,
+    "gap_roc_auc": 0.02586346082501767,
+    "tempo_busca_s": 237.628812207
+  },
+  "ranking": [
+    {
+      "posicao": 1,
+      "ticket": "TC3-61",
+      "modelo": "Random Forest",
+      "roc_auc_cv": 0.6573739359498442,
+      "desvio_auc_cv": 0.0017129761399933237,
+      "roc_auc_validacao": 0.6564606248185223,
+      "average_precision": 0.6656456375572108,
+      "balanced_accuracy": 0.6108181248833052,
+      "f1": 0.6345998460032131,
+      "gap_roc_auc": 0.02586346082501767,
+      "tempo_busca_s": 237.628812207
+    },
+    {
+      "posicao": 2,
+      "ticket": "TC3-62",
+      "modelo": "Gradient Boosting",
+      "roc_auc_cv": 0.656105772196858,
+      "desvio_auc_cv": 0.0013602124496984943,
+      "roc_auc_validacao": 0.6557801415449589,
+      "average_precision": 0.6654622307161497,
+      "balanced_accuracy": 0.6103567513092437,
+      "f1": 0.6249318801089918,
+      "gap_roc_auc": 0.028798224922975013,
+      "tempo_busca_s": 94.32510755099975
+    },
+    {
+      "posicao": 3,
+      "ticket": "TC3-60",
+      "modelo": "Regressão Logística",
+      "roc_auc_cv": 0.612312222510762,
+      "desvio_auc_cv": 0.01205322506547898,
+      "roc_auc_validacao": 0.5916827993991877,
+      "average_precision": 0.5990228627115819,
+      "balanced_accuracy": 0.5604738353041228,
+      "f1": 0.5745282372851511,
+      "gap_roc_auc": 0.0021231007838619087,
+      "tempo_busca_s": 35.20568386400009
+    }
+  ],
+  "proxima_etapa": "avaliar exclusivamente o Random Forest no teste reservado"
+}

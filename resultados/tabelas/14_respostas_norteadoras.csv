@@ -1,0 +1,10 @@
+pergunta,evidencia,interpretacao,limitacao
+É possível prever alfabetização com os dados disponíveis?,ROC AUC=0.6705; AP=0.6841; IC95% AUC=0.6673–0.6737,"Existe sinal preditivo moderado, útil para análise agregada e priorização exploratória.",Não autoriza decisão individual automatizada.
+Quais fatores estão associados?,"sigla_uf, valor_bolsa_familia__signed_log1p, media_inse, rede, in_laboratorio_informatica",São os sinais que mais sustentam a discriminação do modelo.,Importância preditiva não implica direção nem causalidade.
+Quanto o desempenho depende de sigla_uf?,Δ ROC AUC com−sem UF=-0.0052; Δ AP=-0.0069,A comparação quantifica a informação territorial adicional sob o mesmo protocolo e hiperparâmetros.,"UF é proxy de políticas, investimento, infraestrutura e contexto regional; a diferença não é causal."
+Infraestrutura está associada?,77 combinações avaliadas.,As tabelas por faixa permitem comparar taxas observadas e estimadas.,"Infraestrutura municipal agregada, não da escola frequentada."
+INSE está associado?,2024: rho=0.024; 2023: rho=0.059,A direção e a magnitude são apresentadas separadamente por ano.,"INSE municipal de 2023, não individual."
+Há persistência entre 2023 e 2024?,"rho observado=0.447; pares=5,653",Mede persistência municipal de curto prazo.,Dois anos não formam tendência histórica longa; SP não possui 2023.
+Finanças estão associadas?,40 combinações avaliadas.,As diferenças são associações preditivas condicionadas ao conjunto disponível.,Totais podem representar porte; não equivalem a gasto educacional por aluno.
+Existem perfis municipais?,k=3; silhouette=0.241,Os clusters resumem perfis contextuais semelhantes.,"Clusters são descritivos, dependem das variáveis e não representam causas."
+Quais municípios têm risco de não atingir metas?,Tabela de risco produzida; até 145 municípios por ano sem correspondência.,Déficit positivo indica estimativa abaixo da meta no cenário observado.,Não é projeção temporal completa; incerteza é aproximação binomial agregada.

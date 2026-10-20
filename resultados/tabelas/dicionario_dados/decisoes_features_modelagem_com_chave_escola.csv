@@ -1,0 +1,50 @@
+coluna,decisao,justificativa
+id_aluno,chave,Mantida apenas para rastreabilidade e validação.
+id_escola,chave,Mantida apenas para rastreabilidade e validação.
+id_municipio,chave,Mantida apenas para rastreabilidade e validação.
+dataset_split,controle,Controla a separação dos dados; não entra no modelo.
+caderno,excluir_leakage,Ligada à aplicação da avaliação ou à construção/mensuração do target.
+preenchimento_caderno,excluir_leakage,Ligada à aplicação da avaliação ou à construção/mensuração do target.
+presenca,excluir_leakage,Ligada à aplicação da avaliação ou à construção/mensuração do target.
+proficiencia,excluir_leakage,Ligada à aplicação da avaliação ou à construção/mensuração do target.
+media_portugues_municipio_ano_anterior,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_1,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_2,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_3,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_4,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_5,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_6,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_7,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+pc_nivel_8,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+qt_doc_bas,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+qt_mat_bas,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+qt_tur_bas,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+qtd_alunos_inse,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+qtd_escolas_censo,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+qtd_escolas_inse,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+taxa_alfabetizacao_municipio_ano_anterior,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+valor_pib,excluir_pos_eda,"Removida após o EDA por redundância, cobertura temporal inadequada ou representação equivalente mais enxuta."
+nome do município,excluir_redundante,"Identificador de alta cardinalidade, constante ou representação redundante."
+nome uf,excluir_redundante,"Identificador de alta cardinalidade, constante ou representação redundante."
+nome_municipio,excluir_redundante,"Identificador de alta cardinalidade, constante ou representação redundante."
+rede_descricao,excluir_redundante,"Identificador de alta cardinalidade, constante ou representação redundante."
+serie,excluir_redundante,"Identificador de alta cardinalidade, constante ou representação redundante."
+peso_aluno,excluir_tecnica,Campo técnico ou peso amostral; não representa característica preditiva.
+processed_at,excluir_tecnica,Campo técnico ou peso amostral; não representa característica preditiva.
+rede,feature_categorica,Somente redes estadual (2) e municipal (3); a rede privada (4) é excluída antes da modelagem por conter apenas 25 registros de uma única escola/município.
+sigla_uf,feature_categorica,Contexto disponível; encoding será ajustado no pipeline do modelo.
+ano_referencia,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_agua_rede_publica,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_banda_larga,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_biblioteca_sala_leitura,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_energia_rede_publica,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_esgoto_rede_publica,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_internet,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_laboratorio_informatica,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+in_quadra_esportes,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+media_inse,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+valor_bolsa_familia,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+valor_fundeb,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+valor_pib_per_capita,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+valor_receitas,feature_numerica_final,Indicador mantido no conjunto final; pode ser transformado antes da persistência.
+alfabetizado,target,Variável-alvo; nunca entra nas features.

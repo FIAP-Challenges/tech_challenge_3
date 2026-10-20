@@ -1,0 +1,91 @@
+{
+  "schema_resultado": 1,
+  "modelo": "Random Forest",
+  "modo": "avaliacao_final_independente",
+  "hipotese": "modelo tratado como único candidato selecionado",
+  "manifesto": "dados/dados_processados/preparado/manifesto_base_modelagem_com_chave_escola.json",
+  "features": [
+    "sigla_uf",
+    "rede",
+    "ano_referencia",
+    "valor_bolsa_familia__signed_log1p",
+    "valor_fundeb__signed_log1p",
+    "valor_receitas__signed_log1p",
+    "valor_pib_per_capita__signed_log1p",
+    "media_inse",
+    "in_biblioteca_sala_leitura",
+    "in_laboratorio_informatica",
+    "in_quadra_esportes",
+    "in_agua_rede_publica",
+    "in_energia_rede_publica",
+    "in_esgoto_rede_publica",
+    "in_internet",
+    "in_banda_larga",
+    "cobertura_financeira_ausente",
+    "cobertura_inse_ausente"
+  ],
+  "parametros": {
+    "n_estimators": 150,
+    "min_samples_leaf": 40,
+    "max_features": "sqrt",
+    "max_depth": 20
+  },
+  "limiar_classificacao": 0.5,
+  "registros_desenvolvimento": 3286383,
+  "registros_teste": 581591,
+  "metricas_teste": {
+    "accuracy": 0.620561528634384,
+    "balanced_accuracy": 0.619615268546235,
+    "precision": 0.6246752375200131,
+    "recall": 0.6544048475921059,
+    "f1": 0.6391945404544608,
+    "roc_auc": 0.6704827344710891,
+    "average_precision": 0.684096847751993,
+    "brier_score": 0.22733119695501747,
+    "matriz_confusao": [
+      [
+        165439,
+        117447
+      ],
+      [
+        103231,
+        195474
+      ]
+    ]
+  },
+  "intervalos_95_bootstrap": {
+    "roc_auc": {
+      "inferior": 0.6673442271547108,
+      "superior": 0.6736792952440107
+    },
+    "average_precision": {
+      "inferior": 0.6817375682031461,
+      "superior": 0.690172961480119
+    },
+    "balanced_accuracy": {
+      "inferior": 0.6167263210893021,
+      "superior": 0.621785623474322
+    },
+    "f1": {
+      "inferior": 0.6368769901203452,
+      "superior": 0.6430596794057837
+    }
+  },
+  "tempo_treino_segundos": 76.40744903299856,
+  "tempo_inferencia_segundos": 0.6112362929998199,
+  "avisos_treinamento": [],
+  "ambiente": {
+    "python": "3.12.11",
+    "scikit_learn": "1.7.2",
+    "polars": "2.0.0"
+  },
+  "ressalvas": [
+    "id_escola e chave_escola_ano não foram utilizadas como features.",
+    "A chave de escola é anônima e anual; não identifica a unidade real.",
+    "São Paulo possui registros somente em 2024.",
+    "Resultados por município, UF e rede são associações preditivas, não efeitos causais.",
+    "O teste não deve ser reutilizado para ajustar features, hiperparâmetros ou limiar.",
+    "Recortes com predição de uma única classe no limiar global indicam limitação de transportabilidade, não erro de execução.",
+    "A importância de sigla_uf representa sinal territorial e possível uso de proxy geográfica; não implica causalidade."
+  ]
+}

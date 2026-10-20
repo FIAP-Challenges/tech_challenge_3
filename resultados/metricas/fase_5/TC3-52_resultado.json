@@ -1,0 +1,47 @@
+{
+  "schema_resultado": 1,
+  "modelo": {
+    "id": "TC3-52",
+    "nome": "DummyClassifier (prior)"
+  },
+  "execucao": {
+    "modo": "final",
+    "split_avaliacao": "validacao"
+  },
+  "dados": {
+    "registros_treino": 2705236,
+    "registros_validacao": 581147
+  },
+  "configuracao": {
+    "strategy": "prior",
+    "seed": 42,
+    "observacao": "Baseline sem uso de features"
+  },
+  "metricas": {
+    "accuracy": 0.5128409851552189,
+    "balanced_accuracy": 0.5,
+    "precision": 0.5128409851552189,
+    "recall": 1.0,
+    "f1": 0.6779839919561684,
+    "roc_auc": 0.5,
+    "average_precision": 0.5128409851552189
+  },
+  "matriz_confusao": [
+    [
+      0,
+      283111
+    ],
+    [
+      0,
+      298036
+    ]
+  ],
+  "tempos_segundos": {
+    "treino": 0.03988127500088012,
+    "inferencia": 0.004791418001332204
+  },
+  "limitacoes": [
+    "São Paulo possui registros somente em 2024.",
+    "O teste permanece reservado até a avaliação final."
+  ]
+}

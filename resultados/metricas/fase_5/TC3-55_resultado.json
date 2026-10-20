@@ -1,0 +1,51 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-55",
+    "nome": "Support Vector Machine linear"
+  },
+  "execucao": {
+    "modo": "comparacao_inicial_refinada",
+    "split_avaliacao": "validacao"
+  },
+  "dados": {
+    "registros_treino": 270524,
+    "registros_validacao": 58115
+  },
+  "configuracao": {
+    "seed": 42,
+    "cenario_selecionado": "refinado_c01",
+    "parametros": {
+      "C": 0.1,
+      "max_iter": 5000,
+      "class_weight": null
+    }
+  },
+  "metricas": {
+    "accuracy": 0.5808655252516562,
+    "balanced_accuracy": 0.5806635502436661,
+    "precision": 0.58892775460783,
+    "recall": 0.5906361735141334,
+    "f1": 0.5897807268685372,
+    "roc_auc": 0.6109444934129196,
+    "average_precision": 0.6121492387299899
+  },
+  "matriz_confusao": [
+    [
+      16247,
+      12222
+    ],
+    [
+      12136,
+      17510
+    ]
+  ],
+  "tempos_segundos": {
+    "treino": 0.8031856420002441,
+    "inferencia": 0.08928975699927832
+  },
+  "limitacoes": [
+    "São Paulo possui registros somente em 2024; não há validação temporal de SP para 2023.",
+    "O split de teste permanece reservado para avaliação final após seleção e tuning."
+  ]
+}

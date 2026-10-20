@@ -1,0 +1,214 @@
+{
+  "schema_resultado": 1,
+  "fase": 6,
+  "modelo": {
+    "id": "TC3-61",
+    "nome": "Random Forest"
+  },
+  "protocolo": {
+    "manifesto": "dados/dados_processados/preparado/manifesto_base_modelagem_com_chave_escola.json",
+    "features": [
+      "sigla_uf",
+      "rede",
+      "ano_referencia",
+      "valor_bolsa_familia__signed_log1p",
+      "valor_fundeb__signed_log1p",
+      "valor_receitas__signed_log1p",
+      "valor_pib_per_capita__signed_log1p",
+      "media_inse",
+      "in_biblioteca_sala_leitura",
+      "in_laboratorio_informatica",
+      "in_quadra_esportes",
+      "in_agua_rede_publica",
+      "in_energia_rede_publica",
+      "in_esgoto_rede_publica",
+      "in_internet",
+      "in_banda_larga",
+      "cobertura_financeira_ausente",
+      "cobertura_inse_ausente"
+    ],
+    "chave_agrupamento": "chave_escola_ano",
+    "semantica_agrupamento": "agrupamento anonimo anual; nao identifica escola real nem garante continuidade entre anos",
+    "amostra_desenvolvimento": 394366,
+    "registros_treino": 295312,
+    "registros_validacao": 99054,
+    "grupos_treino": 55506,
+    "grupos_validacao": 18503,
+    "sobreposicao_grupos": 0,
+    "cv": "StratifiedGroupKFold",
+    "n_splits_cv": 3,
+    "seed": 42,
+    "teste_utilizado": false
+  },
+  "busca": {
+    "metodo": "RandomizedSearchCV",
+    "n_iter": 10,
+    "metrica_selecao": "roc_auc",
+    "melhores_parametros": {
+      "model__n_estimators": 150,
+      "model__min_samples_leaf": 40,
+      "model__max_features": "sqrt",
+      "model__max_depth": 20
+    },
+    "roc_auc_cv_media": 0.6573739359498442,
+    "roc_auc_cv_desvio": 0.0017129761399933237,
+    "tempo_total_segundos": 237.628812207
+  },
+  "metricas_treino": {
+    "accuracy": 0.6282541854039118,
+    "balanced_accuracy": 0.6271501028461904,
+    "precision": 0.6304419555865453,
+    "recall": 0.6676028110702372,
+    "f1": 0.6484904566892828,
+    "roc_auc": 0.68232408564354,
+    "average_precision": 0.6969829514573718,
+    "matriz_confusao": [
+      [
+        84265,
+        59361
+      ],
+      [
+        50420,
+        101266
+      ]
+    ]
+  },
+  "metricas_validacao": {
+    "accuracy": 0.6119389423950572,
+    "balanced_accuracy": 0.6108181248833052,
+    "precision": 0.6124025318778094,
+    "recall": 0.6584668192219679,
+    "f1": 0.6345998460032131,
+    "roc_auc": 0.6564606248185223,
+    "average_precision": 0.6656456375572108,
+    "matriz_confusao": [
+      [
+        27236,
+        21126
+      ],
+      [
+        17313,
+        33379
+      ]
+    ]
+  },
+  "gap_roc_auc": 0.02586346082501767,
+  "top_resultados_cv": [
+    {
+      "rank_test_roc_auc": 1,
+      "mean_test_roc_auc": 0.6573739359498442,
+      "std_test_roc_auc": 0.0017129761399933237,
+      "mean_test_average_precision": 0.6700862461612173,
+      "mean_test_balanced_accuracy": 0.6096513172521677,
+      "mean_test_f1": 0.6331406518299633,
+      "mean_train_roc_auc": 0.6859692193721104,
+      "mean_fit_time": 3.29004168510437,
+      "params": "{\"model__max_depth\": 20, \"model__max_features\": \"sqrt\", \"model__min_samples_leaf\": 40, \"model__n_estimators\": 150}"
+    },
+    {
+      "rank_test_roc_auc": 2,
+      "mean_test_roc_auc": 0.6572378003189215,
+      "std_test_roc_auc": 0.0016645336643813142,
+      "mean_test_average_precision": 0.670359857997202,
+      "mean_test_balanced_accuracy": 0.6104336153823186,
+      "mean_test_f1": 0.6310000678699866,
+      "mean_train_roc_auc": 0.6949953699103754,
+      "mean_fit_time": 9.0641983350118,
+      "params": "{\"model__max_depth\": 24, \"model__max_features\": \"sqrt\", \"model__min_samples_leaf\": 20, \"model__n_estimators\": 400}"
+    },
+    {
+      "rank_test_roc_auc": 3,
+      "mean_test_roc_auc": 0.6571717661919948,
+      "std_test_roc_auc": 0.0016754385554200463,
+      "mean_test_average_precision": 0.6696651019154456,
+      "mean_test_balanced_accuracy": 0.6094473585041285,
+      "mean_test_f1": 0.6347284897570852,
+      "mean_train_roc_auc": 0.6822505168953542,
+      "mean_fit_time": 5.460267146428426,
+      "params": "{\"model__max_depth\": 24, \"model__max_features\": \"sqrt\", \"model__min_samples_leaf\": 80, \"model__n_estimators\": 250}"
+    },
+    {
+      "rank_test_roc_auc": 4,
+      "mean_test_roc_auc": 0.6567568942288345,
+      "std_test_roc_auc": 0.0019154238242154178,
+      "mean_test_average_precision": 0.6694742139455578,
+      "mean_test_balanced_accuracy": 0.6096545895594684,
+      "mean_test_f1": 0.6339970099838409,
+      "mean_train_roc_auc": 0.6857389258887929,
+      "mean_fit_time": 5.009802500406901,
+      "params": "{\"model__max_depth\": null, \"model__max_features\": \"sqrt\", \"model__min_samples_leaf\": 10, \"model__n_estimators\": 250}"
+    },
+    {
+      "rank_test_roc_auc": 5,
+      "mean_test_roc_auc": 0.65626695522433,
+      "std_test_roc_auc": 0.001992684091232812,
+      "mean_test_average_precision": 0.6686793589187281,
+      "mean_test_balanced_accuracy": 0.609462851678776,
+      "mean_test_f1": 0.6359195273854404,
+      "mean_train_roc_auc": 0.6791775686492599,
+      "mean_fit_time": 3.075512409210205,
+      "params": "{\"model__max_depth\": 16, \"model__max_features\": \"sqrt\", \"model__min_samples_leaf\": 40, \"model__n_estimators\": 150}"
+    },
+    {
+      "rank_test_roc_auc": 6,
+      "mean_test_roc_auc": 0.6555055832547044,
+      "std_test_roc_auc": 0.0020089324032330907,
+      "mean_test_average_precision": 0.6678310475506857,
+      "mean_test_balanced_accuracy": 0.6088094668799211,
+      "mean_test_f1": 0.6360005269931278,
+      "mean_train_roc_auc": 0.6748169878003304,
+      "mean_fit_time": 3.0562920570373535,
+      "params": "{\"model__max_depth\": null, \"model__max_features\": \"sqrt\", \"model__min_samples_leaf\": 80, \"model__n_estimators\": 150}"
+    },
+    {
+      "rank_test_roc_auc": 7,
+      "mean_test_roc_auc": 0.6550808266140508,
+      "std_test_roc_auc": 0.0019264658031574939,
+      "mean_test_average_precision": 0.6680026185112681,
+      "mean_test_balanced_accuracy": 0.6076944932724812,
+      "mean_test_f1": 0.6346651688964916,
+      "mean_train_roc_auc": 0.6775684047676295,
+      "mean_fit_time": 7.453607479731242,
+      "params": "{\"model__max_depth\": 12, \"model__max_features\": 0.5, \"model__min_samples_leaf\": 40, \"model__n_estimators\": 250}"
+    },
+    {
+      "rank_test_roc_auc": 8,
+      "mean_test_roc_auc": 0.6549745875796593,
+      "std_test_roc_auc": 0.0012798208224505912,
+      "mean_test_average_precision": 0.6678130158982207,
+      "mean_test_balanced_accuracy": 0.6092525226164054,
+      "mean_test_f1": 0.6294205083584737,
+      "mean_train_roc_auc": 0.6939854361447461,
+      "mean_fit_time": 20.32553505897522,
+      "params": "{\"model__max_depth\": 16, \"model__max_features\": null, \"model__min_samples_leaf\": 40, \"model__n_estimators\": 400}"
+    },
+    {
+      "rank_test_roc_auc": 9,
+      "mean_test_roc_auc": 0.6548090837921096,
+      "std_test_roc_auc": 0.0019154962395366239,
+      "mean_test_average_precision": 0.6677484014224245,
+      "mean_test_balanced_accuracy": 0.607278661205125,
+      "mean_test_f1": 0.6339087221185851,
+      "mean_train_roc_auc": 0.6789276868276422,
+      "mean_fit_time": 4.526226441065471,
+      "params": "{\"model__max_depth\": 12, \"model__max_features\": 0.5, \"model__min_samples_leaf\": 20, \"model__n_estimators\": 150}"
+    },
+    {
+      "rank_test_roc_auc": 10,
+      "mean_test_roc_auc": 0.6535354850722692,
+      "std_test_roc_auc": 0.0012574505369563344,
+      "mean_test_average_precision": 0.6665206583267044,
+      "mean_test_balanced_accuracy": 0.6078833900560331,
+      "mean_test_f1": 0.6330628077255772,
+      "mean_train_roc_auc": 0.681502900958003,
+      "mean_fit_time": 6.445050239562988,
+      "params": "{\"model__max_depth\": 12, \"model__max_features\": null, \"model__min_samples_leaf\": 10, \"model__n_estimators\": 150}"
+    }
+  ],
+  "observacoes": [
+    "id_escola e chave_escola_ano foram usados somente para agrupamento/rastreabilidade.",
+    "O conjunto de teste não foi carregado nem utilizado na seleção.",
+    "A chave de escola é anônima e anual; não identifica a escola real nem conecta anos diferentes.",
+    "São Paulo possui dados somente em 2024."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "produto": "metas_alfabetizacao_validadas_tc3",
+  "versao_contrato": 1,
+  "uso": "referencia_pos_modelagem; nao utilizar como feature do modelo por aluno",
+  "fontes": [
+    "dados/fontes_originais/complementar/metas_alfabetizacao_oficiais/metas_vs_resultado_municipio",
+    "dados/fontes_originais/complementar/metas_alfabetizacao_oficiais/metas_vs_resultado_uf",
+    "dados/fontes_originais/complementar/metas_alfabetizacao_oficiais/metas_vs_resultado_brasil"
+  ],
+  "caminho_relativo": "dados/dados_processados/preparado/metas_alfabetizacao_validadas",
+  "graos": {
+    "municipio": "id_municipio + rede=3 + ano_publicacao + ano_meta",
+    "uf": "sigla_uf + rede=5 + ano_publicacao + ano_meta",
+    "brasil": "rede=5 + ano_publicacao + ano_meta"
+  },
+  "registros": 74744,
+  "ano_meta_min": 2024,
+  "ano_meta_max": 2030,
+  "municipios_tc3_rede_municipal": 5498,
+  "municipios_com_meta": 5352,
+  "municipios_sem_meta": 146
+}

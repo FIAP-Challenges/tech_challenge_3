@@ -1,0 +1,23 @@
+{
+  "modelo": "DummyClassifier_prior",
+  "split_avaliacao": "validacao",
+  "registros_treino": 2705236,
+  "registros_validacao": 581147,
+  "accuracy": 0.5128409851552189,
+  "balanced_accuracy": 0.5,
+  "precision": 0.5128409851552189,
+  "recall": 1.0,
+  "f1": 0.6779839919561684,
+  "roc_auc": 0.5,
+  "average_precision": 0.5128409851552189,
+  "matriz_confusao": [
+    [
+      0,
+      283111
+    ],
+    [
+      0,
+      298036
+    ]
+  ]
+}

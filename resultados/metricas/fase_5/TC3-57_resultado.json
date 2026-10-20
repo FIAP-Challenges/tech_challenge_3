@@ -1,0 +1,53 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-57",
+    "nome": "Random Forest"
+  },
+  "execucao": {
+    "modo": "comparacao_inicial_refinada",
+    "split_avaliacao": "validacao"
+  },
+  "dados": {
+    "registros_treino": 270524,
+    "registros_validacao": 58115
+  },
+  "configuracao": {
+    "seed": 42,
+    "cenario_selecionado": "refinado_d22",
+    "parametros": {
+      "n_estimators": 200,
+      "max_depth": 22,
+      "min_samples_leaf": 20,
+      "n_jobs": 1,
+      "class_weight": null
+    }
+  },
+  "metricas": {
+    "accuracy": 0.6170868106340875,
+    "balanced_accuracy": 0.6163680218835825,
+    "precision": 0.6182615094218895,
+    "recall": 0.6518585981245362,
+    "f1": 0.6346157003760078,
+    "roc_auc": 0.6669090368624762,
+    "average_precision": 0.677396528518478
+  },
+  "matriz_confusao": [
+    [
+      16537,
+      11932
+    ],
+    [
+      10321,
+      19325
+    ]
+  ],
+  "tempos_segundos": {
+    "treino": 6.548173463999774,
+    "inferencia": 0.10076396699878387
+  },
+  "limitacoes": [
+    "São Paulo possui registros somente em 2024; não há validação temporal de SP para 2023.",
+    "O split de teste permanece reservado para avaliação final após seleção e tuning."
+  ]
+}

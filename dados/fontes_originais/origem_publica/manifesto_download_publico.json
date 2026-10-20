@@ -1,0 +1,29 @@
+{
+  "generated_at_utc": "2026-10-19T16:46:38.397241+00:00",
+  "downloads": [
+    {
+      "source": "censo_escolar_2023",
+      "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2023.zip",
+      "local_path": "dados/complementar/microdados_ed_basica_2023.zip",
+      "bytes": 37572820,
+      "sha256": "3e4d5d133666dd8b4ddf6b5f548ca4f48275a07344e35d5f9a634ba606b6f30f",
+      "status": "existing"
+    },
+    {
+      "source": "pib_municipios_2022",
+      "url": "https://ftp.ibge.gov.br/Pib_Municipios/2022_2023/xlsx/tabelas_completas_2022.xlsx",
+      "local_path": "dados/origem_publica/pib/tabelas_completas_2022.xlsx",
+      "bytes": 95518,
+      "sha256": "b5eeb85b80f20105c7ad9101d8a4e2d6d2c8ba7b76b826962ebfd41339564d1c",
+      "status": "existing"
+    },
+    {
+      "source": "pib_municipios_2023",
+      "url": "https://ftp.ibge.gov.br/Pib_Municipios/2022_2023/xlsx/tabelas_completas_2023.xlsx",
+      "local_path": "dados/origem_publica/pib/tabelas_completas_2023.xlsx",
+      "bytes": 94914,
+      "sha256": "3a0c51d647caca424c4356bd471f97c054827abd14c8fc31b551c1e152071fb8",
+      "status": "existing"
+    }
+  ]
+}

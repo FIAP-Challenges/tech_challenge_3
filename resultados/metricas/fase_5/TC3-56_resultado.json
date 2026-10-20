@@ -1,0 +1,51 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-56",
+    "nome": "Árvore de Decisão"
+  },
+  "execucao": {
+    "modo": "comparacao_inicial_refinada",
+    "split_avaliacao": "validacao"
+  },
+  "dados": {
+    "registros_treino": 270524,
+    "registros_validacao": 58115
+  },
+  "configuracao": {
+    "seed": 42,
+    "cenario_selecionado": "refinado_d16",
+    "parametros": {
+      "max_depth": 16,
+      "min_samples_leaf": 50,
+      "class_weight": null
+    }
+  },
+  "metricas": {
+    "accuracy": 0.6113395853049987,
+    "balanced_accuracy": 0.6110835249483071,
+    "precision": 0.6179527453798082,
+    "recall": 0.6237266410308304,
+    "f1": 0.6208262686968054,
+    "roc_auc": 0.6552107917320076,
+    "average_precision": 0.6636428146041538
+  },
+  "matriz_confusao": [
+    [
+      17037,
+      11432
+    ],
+    [
+      11155,
+      18491
+    ]
+  ],
+  "tempos_segundos": {
+    "treino": 1.7828833059993485,
+    "inferencia": 0.07899172299948987
+  },
+  "limitacoes": [
+    "São Paulo possui registros somente em 2024; não há validação temporal de SP para 2023.",
+    "O split de teste permanece reservado para avaliação final após seleção e tuning."
+  ]
+}
