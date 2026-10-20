@@ -1,0 +1,165 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-54",
+    "nome": "K-Nearest Neighbors (KNN)"
+  },
+  "metodologia": {
+    "comparacao_controlada": true,
+    "split_avaliacao": "validacao",
+    "teste_utilizado": false,
+    "registros_treino": 54105,
+    "registros_validacao": 11623,
+    "seed": 42
+  },
+  "cenario_selecionado": "refinado_k35",
+  "cenarios": [
+    {
+      "cenario": "inicial",
+      "parametros": {
+        "n_neighbors": 25,
+        "weights": "uniform",
+        "n_jobs": 1
+      },
+      "metricas_treino": {
+        "accuracy": 0.6243785232418445,
+        "balanced_accuracy": 0.6240709960468499,
+        "precision": 0.6328133405056482,
+        "recall": 0.636350522899387,
+        "f1": 0.6345770026072103,
+        "roc_auc": 0.6758328089242406,
+        "average_precision": 0.6741169880647014,
+        "matriz_confusao": [
+          [
+            16136,
+            10239
+          ],
+          [
+            10084,
+            17646
+          ]
+        ]
+      },
+      "metricas_validacao": {
+        "accuracy": 0.5866815796266024,
+        "balanced_accuracy": 0.5862049452695277,
+        "precision": 0.5948531837677334,
+        "recall": 0.6056432650319113,
+        "f1": 0.6001997336884154,
+        "roc_auc": 0.6156417611756577,
+        "average_precision": 0.6099089841943444,
+        "matriz_confusao": [
+          [
+            3213,
+            2456
+          ],
+          [
+            2348,
+            3606
+          ]
+        ]
+      },
+      "gap_roc_auc": 0.06019104774858286,
+      "tempo_treino_s": 0.09766057500019087,
+      "tempo_inferencia_s": 1.85907411900007
+    },
+    {
+      "cenario": "refinado_k15",
+      "parametros": {
+        "n_neighbors": 15,
+        "weights": "uniform",
+        "n_jobs": 1
+      },
+      "metricas_treino": {
+        "accuracy": 0.6308289437205434,
+        "balanced_accuracy": 0.630587992199664,
+        "precision": 0.6397477477477478,
+        "recall": 0.6402091597547782,
+        "f1": 0.6399783705839942,
+        "roc_auc": 0.6841423906560041,
+        "average_precision": 0.6788956396253112,
+        "matriz_confusao": [
+          [
+            16378,
+            9997
+          ],
+          [
+            9977,
+            17753
+          ]
+        ]
+      },
+      "metricas_validacao": {
+        "accuracy": 0.581519401187301,
+        "balanced_accuracy": 0.581246530331649,
+        "precision": 0.5913816230717639,
+        "recall": 0.5923748740342627,
+        "f1": 0.5918778318509818,
+        "roc_auc": 0.6107492066091698,
+        "average_precision": 0.6033889543280921,
+        "matriz_confusao": [
+          [
+            3232,
+            2437
+          ],
+          [
+            2427,
+            3527
+          ]
+        ]
+      },
+      "gap_roc_auc": 0.07339318404683437,
+      "tempo_treino_s": 0.08176225100032752,
+      "tempo_inferencia_s": 1.8580010349996883
+    },
+    {
+      "cenario": "refinado_k35",
+      "parametros": {
+        "n_neighbors": 35,
+        "weights": "uniform",
+        "n_jobs": 1
+      },
+      "metricas_treino": {
+        "accuracy": 0.6188152666112189,
+        "balanced_accuracy": 0.6176154318128604,
+        "precision": 0.6192121862837203,
+        "recall": 0.6655247024882799,
+        "f1": 0.641533701811103,
+        "roc_auc": 0.668433940007144,
+        "average_precision": 0.6696219844994012,
+        "matriz_confusao": [
+          [
+            15026,
+            11349
+          ],
+          [
+            9275,
+            18455
+          ]
+        ]
+      },
+      "metricas_validacao": {
+        "accuracy": 0.5878860879291061,
+        "balanced_accuracy": 0.5865024871992977,
+        "precision": 0.589648798521257,
+        "recall": 0.6429291232784683,
+        "f1": 0.6151373935400932,
+        "roc_auc": 0.6179921587346939,
+        "average_precision": 0.6156682791158778,
+        "matriz_confusao": [
+          [
+            3005,
+            2664
+          ],
+          [
+            2126,
+            3828
+          ]
+        ]
+      },
+      "gap_roc_auc": 0.050441781272450026,
+      "tempo_treino_s": 0.10762290800084884,
+      "tempo_inferencia_s": 1.876740941999742
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "produto": "base_modelagem_final_tc3_com_chave_escola",
+  "versao_contrato": 4,
+  "escopo_redes": [
+    "2 - Estadual",
+    "3 - Municipal"
+  ],
+  "exclusoes_escopo": {
+    "rede_4_privada": 25
+  },
+  "formato": "parquet_particionado",
+  "caminho_relativo": "dados/dados_processados/preparado/base_modelagem_final_com_chave_escola_por_uf",
+  "padrao_leitura": "dados/dados_processados/preparado/base_modelagem_final_com_chave_escola_por_uf/sigla_uf=*/*.parquet",
+  "particionamento": [
+    "sigla_uf"
+  ],
+  "registros": 3867974,
+  "quantidade_colunas": 24,
+  "target": "alfabetizado",
+  "controle_split": "dataset_split",
+  "chaves_rastreabilidade": [
+    "id_aluno",
+    "id_municipio",
+    "id_escola",
+    "chave_escola_ano"
+  ],
+  "semantica_chave_escola": "agrupamento anonimo anual; nao identifica escola real nem garante continuidade entre anos",
+  "features_modelagem": [
+    "sigla_uf",
+    "rede",
+    "ano_referencia",
+    "valor_bolsa_familia__signed_log1p",
+    "valor_fundeb__signed_log1p",
+    "valor_receitas__signed_log1p",
+    "valor_pib_per_capita__signed_log1p",
+    "media_inse",
+    "in_biblioteca_sala_leitura",
+    "in_laboratorio_informatica",
+    "in_quadra_esportes",
+    "in_agua_rede_publica",
+    "in_energia_rede_publica",
+    "in_esgoto_rede_publica",
+    "in_internet",
+    "in_banda_larga",
+    "cobertura_financeira_ausente",
+    "cobertura_inse_ausente"
+  ],
+  "catalogo_relativo": "resultados/tabelas/dicionario_dados/base_modelagem_catalogo_com_chave_escola.csv",
+  "decisoes_relativo": "resultados/tabelas/dicionario_dados/decisoes_features_modelagem_com_chave_escola.csv"
+}

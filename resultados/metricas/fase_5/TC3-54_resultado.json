@@ -1,0 +1,51 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-54",
+    "nome": "K-Nearest Neighbors (KNN)"
+  },
+  "execucao": {
+    "modo": "comparacao_inicial_refinada",
+    "split_avaliacao": "validacao"
+  },
+  "dados": {
+    "registros_treino": 54105,
+    "registros_validacao": 11623
+  },
+  "configuracao": {
+    "seed": 42,
+    "cenario_selecionado": "refinado_k35",
+    "parametros": {
+      "n_neighbors": 35,
+      "weights": "uniform",
+      "n_jobs": 1
+    }
+  },
+  "metricas": {
+    "accuracy": 0.5878860879291061,
+    "balanced_accuracy": 0.5865024871992977,
+    "precision": 0.589648798521257,
+    "recall": 0.6429291232784683,
+    "f1": 0.6151373935400932,
+    "roc_auc": 0.6179921587346939,
+    "average_precision": 0.6156682791158778
+  },
+  "matriz_confusao": [
+    [
+      3005,
+      2664
+    ],
+    [
+      2126,
+      3828
+    ]
+  ],
+  "tempos_segundos": {
+    "treino": 0.10762290800084884,
+    "inferencia": 1.876740941999742
+  },
+  "limitacoes": [
+    "São Paulo possui registros somente em 2024; não há validação temporal de SP para 2023.",
+    "O split de teste permanece reservado para avaliação final após seleção e tuning."
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-57",
+    "nome": "Random Forest"
+  },
+  "metodologia": {
+    "comparacao_controlada": true,
+    "split_avaliacao": "validacao",
+    "teste_utilizado": false,
+    "registros_treino": 270524,
+    "registros_validacao": 58115,
+    "seed": 42
+  },
+  "cenario_selecionado": "refinado_d22",
+  "cenarios": [
+    {
+      "cenario": "inicial",
+      "parametros": {
+        "n_estimators": 200,
+        "max_depth": 18,
+        "min_samples_leaf": 20,
+        "n_jobs": 1,
+        "class_weight": null
+      },
+      "metricas_treino": {
+        "accuracy": 0.6277520663601012,
+        "balanced_accuracy": 0.6266775621938574,
+        "precision": 0.6290419953737935,
+        "recall": 0.6683579701475326,
+        "f1": 0.6481042736834749,
+        "roc_auc": 0.6816254096886201,
+        "average_precision": 0.6954371887891868,
+        "matriz_confusao": [
+          [
+            77088,
+            54687
+          ],
+          [
+            46015,
+            92734
+          ]
+        ]
+      },
+      "metricas_validacao": {
+        "accuracy": 0.6160027531618343,
+        "balanced_accuracy": 0.615122796179576,
+        "precision": 0.6155495302351977,
+        "recall": 0.6585711394454564,
+        "f1": 0.6363340069095886,
+        "roc_auc": 0.665732148893634,
+        "average_precision": 0.676156066088716,
+        "matriz_confusao": [
+          [
+            16275,
+            12194
+          ],
+          [
+            10122,
+            19524
+          ]
+        ]
+      },
+      "gap_roc_auc": 0.015893260794986097,
+      "tempo_treino_s": 6.394501363000018,
+      "tempo_inferencia_s": 0.09679407599833212
+    },
+    {
+      "cenario": "refinado_d16",
+      "parametros": {
+        "n_estimators": 150,
+        "max_depth": 16,
+        "min_samples_leaf": 40,
+        "n_jobs": 1,
+        "class_weight": null
+      },
+      "metricas_treino": {
+        "accuracy": 0.6222775058774822,
+        "balanced_accuracy": 0.6209948171465915,
+        "precision": 0.6222403487423612,
+        "recall": 0.6707507801858031,
+        "f1": 0.6455855574631914,
+        "roc_auc": 0.6740842366756213,
+        "average_precision": 0.6867544192469621,
+        "matriz_confusao": [
+          [
+            75275,
+            56500
+          ],
+          [
+            45683,
+            93066
+          ]
+        ]
+      },
+      "metricas_validacao": {
+        "accuracy": 0.6142992342768648,
+        "balanced_accuracy": 0.6132439092365113,
+        "precision": 0.6122163940531984,
+        "recall": 0.66535114349322,
+        "f1": 0.6376788167784693,
+        "roc_auc": 0.6629367295381414,
+        "average_precision": 0.6730381918739848,
+        "matriz_confusao": [
+          [
+            15975,
+            12494
+          ],
+          [
+            9921,
+            19725
+          ]
+        ]
+      },
+      "gap_roc_auc": 0.011147507137479917,
+      "tempo_treino_s": 4.4593553979993885,
+      "tempo_inferencia_s": 0.0911379039989697
+    },
+    {
+      "cenario": "refinado_d22",
+      "parametros": {
+        "n_estimators": 200,
+        "max_depth": 22,
+        "min_samples_leaf": 20,
+        "n_jobs": 1,
+        "class_weight": null
+      },
+      "metricas_treino": {
+        "accuracy": 0.6319919859236149,
+        "balanced_accuracy": 0.6311374325611763,
+        "precision": 0.6350176376563964,
+        "recall": 0.6642858687269818,
+        "f1": 0.6493221037503566,
+        "roc_auc": 0.6869858638000388,
+        "average_precision": 0.701621197914057,
+        "matriz_confusao": [
+          [
+            78800,
+            52975
+          ],
+          [
+            46580,
+            92169
+          ]
+        ]
+      },
+      "metricas_validacao": {
+        "accuracy": 0.6170868106340875,
+        "balanced_accuracy": 0.6163680218835825,
+        "precision": 0.6182615094218895,
+        "recall": 0.6518585981245362,
+        "f1": 0.6346157003760078,
+        "roc_auc": 0.6669090368624762,
+        "average_precision": 0.677396528518478,
+        "matriz_confusao": [
+          [
+            16537,
+            11932
+          ],
+          [
+            10321,
+            19325
+          ]
+        ]
+      },
+      "gap_roc_auc": 0.02007682693756263,
+      "tempo_treino_s": 6.548173463999774,
+      "tempo_inferencia_s": 0.10076396699878387
+    }
+  ]
+}

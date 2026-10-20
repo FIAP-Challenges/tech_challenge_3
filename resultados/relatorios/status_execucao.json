@@ -1,0 +1,10 @@
+{
+  "estado": "concluido",
+  "finalizado_em_utc": "2026-10-20T23:01:47.305314+00:00",
+  "fluxo": "TC3_Pipeline_Completo_Alfabetizacao.ipynb",
+  "backend_ml": "RAPIDS cuML — NVIDIA GeForce RTX 3050 6GB Laptop GPU (6.0 GB de VRAM)",
+  "modelo_oficial": "Random Forest",
+  "roc_auc_teste": 0.6704827344710891,
+  "artefatos_validados": 12,
+  "erro": null
+}

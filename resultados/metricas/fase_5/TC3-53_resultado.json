@@ -1,0 +1,52 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-53",
+    "nome": "Regressão Logística"
+  },
+  "execucao": {
+    "modo": "comparacao_inicial_refinada",
+    "split_avaliacao": "validacao"
+  },
+  "dados": {
+    "registros_treino": 270524,
+    "registros_validacao": 58115
+  },
+  "configuracao": {
+    "seed": 42,
+    "cenario_selecionado": "refinado_c01",
+    "parametros": {
+      "C": 0.1,
+      "max_iter": 10000,
+      "solver": "lbfgs",
+      "tol": 0.001
+    }
+  },
+  "metricas": {
+    "accuracy": 0.5670825088187215,
+    "balanced_accuracy": 0.566630480777534,
+    "precision": 0.5737193178457596,
+    "recall": 0.588949605343048,
+    "f1": 0.5812347076349473,
+    "roc_auc": 0.594739878415005,
+    "average_precision": 0.5998142602400178
+  },
+  "matriz_confusao": [
+    [
+      15496,
+      12973
+    ],
+    [
+      12186,
+      17460
+    ]
+  ],
+  "tempos_segundos": {
+    "treino": 0.9134142969996901,
+    "inferencia": 0.08002847399984603
+  },
+  "limitacoes": [
+    "São Paulo possui registros somente em 2024; não há validação temporal de SP para 2023.",
+    "O split de teste permanece reservado para avaliação final após seleção e tuning."
+  ]
+}

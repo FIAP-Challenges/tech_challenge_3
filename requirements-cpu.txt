@@ -1,0 +1,3 @@
+# Ambiente CPU: herda integralmente o requirements.txt, incluindo
+# scikit-learn==1.9.1.
+-r requirements.txt

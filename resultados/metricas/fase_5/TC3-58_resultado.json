@@ -1,0 +1,52 @@
+{
+  "schema_resultado": 2,
+  "modelo": {
+    "id": "TC3-58",
+    "nome": "Gradient Boosting"
+  },
+  "execucao": {
+    "modo": "comparacao_inicial_refinada",
+    "split_avaliacao": "validacao"
+  },
+  "dados": {
+    "registros_treino": 270524,
+    "registros_validacao": 58115
+  },
+  "configuracao": {
+    "seed": 42,
+    "cenario_selecionado": "refinado_lr004",
+    "parametros": {
+      "learning_rate": 0.04,
+      "max_iter": 250,
+      "max_leaf_nodes": 63,
+      "l2_regularization": 1.0
+    }
+  },
+  "metricas": {
+    "accuracy": 0.6171384324184807,
+    "balanced_accuracy": 0.6165350649412692,
+    "precision": 0.619575761495182,
+    "recall": 0.6463266545233758,
+    "f1": 0.6326685597305686,
+    "roc_auc": 0.665620764540588,
+    "average_precision": 0.6767250394398492
+  },
+  "matriz_confusao": [
+    [
+      16704,
+      11765
+    ],
+    [
+      10485,
+      19161
+    ]
+  ],
+  "tempos_segundos": {
+    "treino": 3.0061897810010123,
+    "inferencia": 0.39351782299854676
+  },
+  "limitacoes": [
+    "São Paulo possui registros somente em 2024; não há validação temporal de SP para 2023.",
+    "O split de teste permanece reservado para avaliação final após seleção e tuning."
+  ]
+}

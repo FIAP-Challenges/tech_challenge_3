@@ -1,0 +1,13 @@
+.git
+.venv
+.execucao_temporaria
+.ipynb_checkpoints
+**/__pycache__
+*.pyc
+tmp
+laboratorio
+output
+resultados
+modelos
+dados/processados
+dados/saidas_finais

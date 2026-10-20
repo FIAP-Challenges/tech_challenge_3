@@ -222,3 +222,12 @@ dados/principal/ml_aluno/
 dados/complementar/censo_escolar_2023/
 .mplconfig/
 docs/inventario_padronizado_bases_complementares.csv
+
+# Testes, experimentos e artefatos temporários locais
+/laboratorio/
+
+# Relatórios e arquivos exportados localmente
+/output/
+
+# Área transitória usada quando SALVAR_ARTEFATOS=False
+/.execucao_temporaria/

@@ -1,0 +1,215 @@
+{
+  "schema_resultado": 1,
+  "fase": 6,
+  "modelo": {
+    "id": "TC3-60",
+    "nome": "Regressão Logística"
+  },
+  "protocolo": {
+    "manifesto": "dados/dados_processados/preparado/manifesto_base_modelagem_com_chave_escola.json",
+    "features": [
+      "sigla_uf",
+      "rede",
+      "ano_referencia",
+      "valor_bolsa_familia__signed_log1p",
+      "valor_fundeb__signed_log1p",
+      "valor_receitas__signed_log1p",
+      "valor_pib_per_capita__signed_log1p",
+      "media_inse",
+      "in_biblioteca_sala_leitura",
+      "in_laboratorio_informatica",
+      "in_quadra_esportes",
+      "in_agua_rede_publica",
+      "in_energia_rede_publica",
+      "in_esgoto_rede_publica",
+      "in_internet",
+      "in_banda_larga",
+      "cobertura_financeira_ausente",
+      "cobertura_inse_ausente"
+    ],
+    "chave_agrupamento": "chave_escola_ano",
+    "semantica_agrupamento": "agrupamento anonimo anual; nao identifica escola real nem garante continuidade entre anos",
+    "amostra_desenvolvimento": 394366,
+    "registros_treino": 295312,
+    "registros_validacao": 99054,
+    "grupos_treino": 55506,
+    "grupos_validacao": 18503,
+    "sobreposicao_grupos": 0,
+    "cv": "StratifiedGroupKFold",
+    "n_splits_cv": 3,
+    "seed": 42,
+    "teste_utilizado": false
+  },
+  "busca": {
+    "metodo": "RandomizedSearchCV",
+    "n_iter": 10,
+    "metrica_selecao": "roc_auc",
+    "melhores_parametros": {
+      "model__class_weight": null,
+      "model__C": 0.0026366508987303583
+    },
+    "roc_auc_cv_media": 0.612312222510762,
+    "roc_auc_cv_desvio": 0.01205322506547898,
+    "tempo_total_segundos": 35.20568386400009,
+    "convergiu_vencedor": true,
+    "iteracoes_vencedor": 65,
+    "avisos_convergencia_busca": 0
+  },
+  "metricas_treino": {
+    "accuracy": 0.5629029636452294,
+    "balanced_accuracy": 0.5623590276224639,
+    "precision": 0.5733751395705123,
+    "recall": 0.5822884115870944,
+    "f1": 0.5777974029372323,
+    "roc_auc": 0.5938059001830496,
+    "average_precision": 0.6035260827427665,
+    "matriz_confusao": [
+      [
+        77907,
+        65719
+      ],
+      [
+        63361,
+        88325
+      ]
+    ]
+  },
+  "metricas_validacao": {
+    "accuracy": 0.5609162678942798,
+    "balanced_accuracy": 0.5604738353041228,
+    "precision": 0.5698511575556461,
+    "recall": 0.5792827270575238,
+    "f1": 0.5745282372851511,
+    "roc_auc": 0.5916827993991877,
+    "average_precision": 0.5990228627115819,
+    "matriz_confusao": [
+      [
+        26196,
+        22166
+      ],
+      [
+        21327,
+        29365
+      ]
+    ]
+  },
+  "gap_roc_auc": 0.0021231007838619087,
+  "top_resultados_cv": [
+    {
+      "rank_test_roc_auc": 1,
+      "mean_test_roc_auc": 0.612312222510762,
+      "std_test_roc_auc": 0.01205322506547898,
+      "mean_test_average_precision": 0.6233344044465906,
+      "mean_test_balanced_accuracy": 0.5783129096722041,
+      "mean_test_f1": 0.5986852600013327,
+      "mean_train_roc_auc": 0.6123136599946696,
+      "mean_fit_time": 0.7470126946767172,
+      "params": "{\"model__C\": 0.0026366508987303583, \"model__class_weight\": null}"
+    },
+    {
+      "rank_test_roc_auc": 2,
+      "mean_test_roc_auc": 0.5974433448512669,
+      "std_test_roc_auc": 0.005719826044223999,
+      "mean_test_average_precision": 0.6094028175331537,
+      "mean_test_balanced_accuracy": 0.5654408210754931,
+      "mean_test_f1": 0.5825942249984567,
+      "mean_train_roc_auc": 0.5973914688255054,
+      "mean_fit_time": 0.617167075475057,
+      "params": "{\"model__C\": 0.004281332398719396, \"model__class_weight\": null}"
+    },
+    {
+      "rank_test_roc_auc": 3,
+      "mean_test_roc_auc": 0.5909497443227774,
+      "std_test_roc_auc": 0.021192971865079898,
+      "mean_test_average_precision": 0.5986665203701073,
+      "mean_test_balanced_accuracy": 0.567759327441908,
+      "mean_test_f1": 0.5677501215585895,
+      "mean_train_roc_auc": 0.5921991828266993,
+      "mean_fit_time": 0.8345046043395996,
+      "params": "{\"model__C\": 0.07847599703514611, \"model__class_weight\": \"balanced\"}"
+    },
+    {
+      "rank_test_roc_auc": 4,
+      "mean_test_roc_auc": 0.5891104913738409,
+      "std_test_roc_auc": 0.010442526239785662,
+      "mean_test_average_precision": 0.5966219569850225,
+      "mean_test_balanced_accuracy": 0.5610464679185488,
+      "mean_test_f1": 0.5813096144550937,
+      "mean_train_roc_auc": 0.5898483663847464,
+      "mean_fit_time": 0.6332501570383707,
+      "params": "{\"model__C\": 0.018329807108324356, \"model__class_weight\": null}"
+    },
+    {
+      "rank_test_roc_auc": 5,
+      "mean_test_roc_auc": 0.588735207188745,
+      "std_test_roc_auc": 0.01036668906042427,
+      "mean_test_average_precision": 0.5973837281243728,
+      "mean_test_balanced_accuracy": 0.5612614088752312,
+      "mean_test_f1": 0.5812370370849435,
+      "mean_train_roc_auc": 0.5896522836695381,
+      "mean_fit_time": 0.6309937636057535,
+      "params": "{\"model__C\": 0.04832930238571752, \"model__class_weight\": null}"
+    },
+    {
+      "rank_test_roc_auc": 6,
+      "mean_test_roc_auc": 0.588396010588165,
+      "std_test_roc_auc": 0.00841443575106276,
+      "mean_test_average_precision": 0.5960301580950943,
+      "mean_test_balanced_accuracy": 0.5641710300272141,
+      "mean_test_f1": 0.5562064941205663,
+      "mean_train_roc_auc": 0.5880606062869925,
+      "mean_fit_time": 0.6234080791473389,
+      "params": "{\"model__C\": 0.029763514416313176, \"model__class_weight\": \"balanced\"}"
+    },
+    {
+      "rank_test_roc_auc": 7,
+      "mean_test_roc_auc": 0.5883757200740458,
+      "std_test_roc_auc": 0.008406854967035566,
+      "mean_test_average_precision": 0.5960269662135369,
+      "mean_test_balanced_accuracy": 0.563846611060754,
+      "mean_test_f1": 0.5548468364940463,
+      "mean_train_roc_auc": 0.5880675419639956,
+      "mean_fit_time": 0.6150654951731364,
+      "params": "{\"model__C\": 0.5455594781168515, \"model__class_weight\": \"balanced\"}"
+    },
+    {
+      "rank_test_roc_auc": 8,
+      "mean_test_roc_auc": 0.5870981348002903,
+      "std_test_roc_auc": 0.00862063586453009,
+      "mean_test_average_precision": 0.5949773420147131,
+      "mean_test_balanced_accuracy": 0.5602205392816226,
+      "mean_test_f1": 0.5800566472546518,
+      "mean_train_roc_auc": 0.5879054948781518,
+      "mean_fit_time": 0.6075267791748047,
+      "params": "{\"model__C\": 0.5455594781168515, \"model__class_weight\": null}"
+    },
+    {
+      "rank_test_roc_auc": 9,
+      "mean_test_roc_auc": 0.5821995324982191,
+      "std_test_roc_auc": 0.007936943061541905,
+      "mean_test_average_precision": 0.5883155803834971,
+      "mean_test_balanced_accuracy": 0.5606469428923376,
+      "mean_test_f1": 0.555708239687305,
+      "mean_train_roc_auc": 0.5822156890637179,
+      "mean_fit_time": 0.5804218451182047,
+      "params": "{\"model__C\": 6.158482110660261, \"model__class_weight\": \"balanced\"}"
+    },
+    {
+      "rank_test_roc_auc": 10,
+      "mean_test_roc_auc": 0.5764430565948188,
+      "std_test_roc_auc": 0.00018524339587771483,
+      "mean_test_average_precision": 0.580490671865153,
+      "mean_test_balanced_accuracy": 0.5583737467017625,
+      "mean_test_f1": 0.5561776988719281,
+      "mean_train_roc_auc": 0.5766483107410392,
+      "mean_fit_time": 0.4893057346343994,
+      "params": "{\"model__C\": 10.0, \"model__class_weight\": \"balanced\"}"
+    }
+  ],
+  "observacoes": [
+    "id_escola e chave_escola_ano foram usados somente para agrupamento/rastreabilidade.",
+    "O conjunto de teste não foi carregado nem utilizado na seleção.",
+    "A chave de escola é anônima e anual; não identifica a escola real nem conecta anos diferentes.",
+    "São Paulo possui dados somente em 2024."
+  ]
+}

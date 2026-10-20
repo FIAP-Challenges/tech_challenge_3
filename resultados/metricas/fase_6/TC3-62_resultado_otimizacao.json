@@ -1,0 +1,215 @@
+{
+  "schema_resultado": 1,
+  "fase": 6,
+  "modelo": {
+    "id": "TC3-62",
+    "nome": "Gradient Boosting"
+  },
+  "protocolo": {
+    "manifesto": "dados/dados_processados/preparado/manifesto_base_modelagem_com_chave_escola.json",
+    "features": [
+      "sigla_uf",
+      "rede",
+      "ano_referencia",
+      "valor_bolsa_familia__signed_log1p",
+      "valor_fundeb__signed_log1p",
+      "valor_receitas__signed_log1p",
+      "valor_pib_per_capita__signed_log1p",
+      "media_inse",
+      "in_biblioteca_sala_leitura",
+      "in_laboratorio_informatica",
+      "in_quadra_esportes",
+      "in_agua_rede_publica",
+      "in_energia_rede_publica",
+      "in_esgoto_rede_publica",
+      "in_internet",
+      "in_banda_larga",
+      "cobertura_financeira_ausente",
+      "cobertura_inse_ausente"
+    ],
+    "chave_agrupamento": "chave_escola_ano",
+    "semantica_agrupamento": "agrupamento anonimo anual; nao identifica escola real nem garante continuidade entre anos",
+    "amostra_desenvolvimento": 394366,
+    "registros_treino": 295312,
+    "registros_validacao": 99054,
+    "grupos_treino": 55506,
+    "grupos_validacao": 18503,
+    "sobreposicao_grupos": 0,
+    "cv": "StratifiedGroupKFold",
+    "n_splits_cv": 3,
+    "seed": 42,
+    "teste_utilizado": false
+  },
+  "busca": {
+    "metodo": "RandomizedSearchCV",
+    "n_iter": 10,
+    "metrica_selecao": "roc_auc",
+    "melhores_parametros": {
+      "model__min_samples_leaf": 100,
+      "model__max_leaf_nodes": 31,
+      "model__max_iter": 350,
+      "model__learning_rate": 0.08,
+      "model__l2_regularization": 5.0
+    },
+    "roc_auc_cv_media": 0.656105772196858,
+    "roc_auc_cv_desvio": 0.0013602124496984943,
+    "tempo_total_segundos": 94.32510755099975
+  },
+  "metricas_treino": {
+    "accuracy": 0.6300014899496126,
+    "balanced_accuracy": 0.6295383733125623,
+    "precision": 0.6379894737526918,
+    "recall": 0.6465065991587885,
+    "f1": 0.6422197991466845,
+    "roc_auc": 0.6845783664679339,
+    "average_precision": 0.7000966231518944,
+    "matriz_confusao": [
+      [
+        87981,
+        55645
+      ],
+      [
+        53620,
+        98066
+      ]
+    ]
+  },
+  "metricas_validacao": {
+    "accuracy": 0.6108991055383932,
+    "balanced_accuracy": 0.6103567513092437,
+    "precision": 0.6166743489283245,
+    "recall": 0.6334135563797049,
+    "f1": 0.6249318801089918,
+    "roc_auc": 0.6557801415449589,
+    "average_precision": 0.6654622307161497,
+    "matriz_confusao": [
+      [
+        28403,
+        19959
+      ],
+      [
+        18583,
+        32109
+      ]
+    ]
+  },
+  "gap_roc_auc": 0.028798224922975013,
+  "top_resultados_cv": [
+    {
+      "rank_test_roc_auc": 1,
+      "mean_test_roc_auc": 0.656105772196858,
+      "std_test_roc_auc": 0.0013602124496984943,
+      "mean_test_average_precision": 0.6694839131060132,
+      "mean_test_balanced_accuracy": 0.6097299243713815,
+      "mean_test_f1": 0.6252299267100585,
+      "mean_train_roc_auc": 0.6901518422910886,
+      "mean_fit_time": 2.0116740067799888,
+      "params": "{\"model__l2_regularization\": 5.0, \"model__learning_rate\": 0.08, \"model__max_iter\": 350, \"model__max_leaf_nodes\": 31, \"model__min_samples_leaf\": 100}"
+    },
+    {
+      "rank_test_roc_auc": 2,
+      "mean_test_roc_auc": 0.6559436004078715,
+      "std_test_roc_auc": 0.001469238347094109,
+      "mean_test_average_precision": 0.6692533047422508,
+      "mean_test_balanced_accuracy": 0.6097220494086802,
+      "mean_test_f1": 0.6253313796234945,
+      "mean_train_roc_auc": 0.6909229304371948,
+      "mean_fit_time": 1.5701031684875488,
+      "params": "{\"model__l2_regularization\": 5.0, \"model__learning_rate\": 0.12, \"model__max_iter\": 250, \"model__max_leaf_nodes\": 31, \"model__min_samples_leaf\": 100}"
+    },
+    {
+      "rank_test_roc_auc": 3,
+      "mean_test_roc_auc": 0.6559138695993613,
+      "std_test_roc_auc": 0.00170819149185429,
+      "mean_test_average_precision": 0.6692765779639379,
+      "mean_test_balanced_accuracy": 0.6098256172377899,
+      "mean_test_f1": 0.6252266591582173,
+      "mean_train_roc_auc": 0.6918956968038342,
+      "mean_fit_time": 1.7248846689860027,
+      "params": "{\"model__l2_regularization\": 1.0, \"model__learning_rate\": 0.08, \"model__max_iter\": 350, \"model__max_leaf_nodes\": 63, \"model__min_samples_leaf\": 100}"
+    },
+    {
+      "rank_test_roc_auc": 4,
+      "mean_test_roc_auc": 0.6558957993682456,
+      "std_test_roc_auc": 0.0015024425257561614,
+      "mean_test_average_precision": 0.6689953683646387,
+      "mean_test_balanced_accuracy": 0.6095613722189602,
+      "mean_test_f1": 0.6265973036570013,
+      "mean_train_roc_auc": 0.6823047997423001,
+      "mean_fit_time": 1.6013282934824626,
+      "params": "{\"model__l2_regularization\": 1.0, \"model__learning_rate\": 0.12, \"model__max_iter\": 350, \"model__max_leaf_nodes\": 15, \"model__min_samples_leaf\": 20}"
+    },
+    {
+      "rank_test_roc_auc": 5,
+      "mean_test_roc_auc": 0.6558769633053171,
+      "std_test_roc_auc": 0.0018139579086965583,
+      "mean_test_average_precision": 0.6694776682768523,
+      "mean_test_balanced_accuracy": 0.6096995086240752,
+      "mean_test_f1": 0.6243002822391196,
+      "mean_train_roc_auc": 0.6903043540997335,
+      "mean_fit_time": 1.4905467828114827,
+      "params": "{\"model__l2_regularization\": 0.5, \"model__learning_rate\": 0.12, \"model__max_iter\": 250, \"model__max_leaf_nodes\": 31, \"model__min_samples_leaf\": 100}"
+    },
+    {
+      "rank_test_roc_auc": 6,
+      "mean_test_roc_auc": 0.6555781707346884,
+      "std_test_roc_auc": 0.0012494724238589342,
+      "mean_test_average_precision": 0.6690282726948622,
+      "mean_test_balanced_accuracy": 0.6101899311675697,
+      "mean_test_f1": 0.6249072558840699,
+      "mean_train_roc_auc": 0.693115795846842,
+      "mean_fit_time": 1.233115593592326,
+      "params": "{\"model__l2_regularization\": 5.0, \"model__learning_rate\": 0.12, \"model__max_iter\": 350, \"model__max_leaf_nodes\": 63, \"model__min_samples_leaf\": 50}"
+    },
+    {
+      "rank_test_roc_auc": 7,
+      "mean_test_roc_auc": 0.6555264502998458,
+      "std_test_roc_auc": 0.0020462295466110985,
+      "mean_test_average_precision": 0.6686968299097314,
+      "mean_test_balanced_accuracy": 0.6090545946518371,
+      "mean_test_f1": 0.628513407876734,
+      "mean_train_roc_auc": 0.6746623334456355,
+      "mean_fit_time": 1.9185585180918376,
+      "params": "{\"model__l2_regularization\": 2.0, \"model__learning_rate\": 0.06, \"model__max_iter\": 350, \"model__max_leaf_nodes\": 15, \"model__min_samples_leaf\": 20}"
+    },
+    {
+      "rank_test_roc_auc": 8,
+      "mean_test_roc_auc": 0.6544814542029398,
+      "std_test_roc_auc": 0.0021686010936721985,
+      "mean_test_average_precision": 0.6673663478745634,
+      "mean_test_balanced_accuracy": 0.6080223479032287,
+      "mean_test_f1": 0.6295777511527304,
+      "mean_train_roc_auc": 0.66870124858499,
+      "mean_fit_time": 1.3797046343485515,
+      "params": "{\"model__l2_regularization\": 1.0, \"model__learning_rate\": 0.04, \"model__max_iter\": 150, \"model__max_leaf_nodes\": 31, \"model__min_samples_leaf\": 100}"
+    },
+    {
+      "rank_test_roc_auc": 9,
+      "mean_test_roc_auc": 0.6521833090897741,
+      "std_test_roc_auc": 0.0025227271537169634,
+      "mean_test_average_precision": 0.6650872622899042,
+      "mean_test_balanced_accuracy": 0.6060597752626231,
+      "mean_test_f1": 0.6267650925936731,
+      "mean_train_roc_auc": 0.66252785284467,
+      "mean_fit_time": 1.0945688883463542,
+      "params": "{\"model__l2_regularization\": 0.0, \"model__learning_rate\": 0.06, \"model__max_iter\": 150, \"model__max_leaf_nodes\": 15, \"model__min_samples_leaf\": 20}"
+    },
+    {
+      "rank_test_roc_auc": 10,
+      "mean_test_roc_auc": 0.647149642135577,
+      "std_test_roc_auc": 0.002749170868069665,
+      "mean_test_average_precision": 0.6600902883054712,
+      "mean_test_balanced_accuracy": 0.603056340190445,
+      "mean_test_f1": 0.6244807122648978,
+      "mean_train_roc_auc": 0.6519352689447864,
+      "mean_fit_time": 1.321072022120158,
+      "params": "{\"model__l2_regularization\": 5.0, \"model__learning_rate\": 0.025, \"model__max_iter\": 150, \"model__max_leaf_nodes\": 15, \"model__min_samples_leaf\": 50}"
+    }
+  ],
+  "observacoes": [
+    "id_escola e chave_escola_ano foram usados somente para agrupamento/rastreabilidade.",
+    "O conjunto de teste não foi carregado nem utilizado na seleção.",
+    "A chave de escola é anônima e anual; não identifica a escola real nem conecta anos diferentes.",
+    "São Paulo possui dados somente em 2024."
+  ]
+}

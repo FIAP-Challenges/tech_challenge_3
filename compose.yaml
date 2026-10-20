@@ -1,0 +1,36 @@
+services:
+  notebook-cpu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      TC3_USAR_GPU: "0"
+      TC3_EXECUTAR_SHAP: "0"
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/workspace
+    shm_size: 1g
+
+  notebook-gpu:
+    profiles: ["gpu"]
+    build:
+      context: .
+      dockerfile: Dockerfile.gpu
+    environment:
+      TC3_USAR_GPU: "1"
+      TC3_EXECUTAR_SHAP: "1"
+      TC3_AMOSTRA_SHAP: "100"
+      TC3_BACKGROUND_SHAP: "50"
+    ports:
+      - "8889:8888"
+    volumes:
+      - .:/workspace
+    shm_size: 2g
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
