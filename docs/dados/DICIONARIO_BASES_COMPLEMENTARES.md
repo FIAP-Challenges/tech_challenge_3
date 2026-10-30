@@ -1,11 +1,20 @@
+# Dicionário das bases complementares
 
+## Índice
 
+- [Indicadores municipais do Fundeb](#indicadores-municipais-do-fundeb)
+- [Receitas orçamentárias municipais](#receitas-orçamentárias-municipais)
+- [PIB dos municípios](#pib-dos-municípios)
+- [Bolsa Família](#bolsa-família)
+- [Fontes e integração](../FONTES_INTEGRACAO_GRANULARIDADE.md)
+- [Índice geral](../INDICE.md)
 
-indicador_municipal
-file: base_dados_fundeb_indicador_municipal_2023_2024.csv
-fonte: basedosdados.br_fnde_fundeb.indicador_municipal
+## Indicadores municipais do Fundeb
 
-Descrição
+**Arquivo:** `base_dados_fundeb_indicador_municipal_2023_2024.csv`  
+**Fonte:** `basedosdados.br_fnde_fundeb.indicador_municipal`
+
+### Descrição
 Indicadores legais e educacionais dos municípios, calculados pelo FNDE a partir das declarações bimestrais no SIOPE. 
 Uma linha por município, bimestre e indicador.
 
@@ -15,15 +24,12 @@ Uma linha por município, bimestre e indicador.
 | sigla_uf            | STRING   | NULLABLE | Sigla da unidade federativa do ente declarante |
 | id_municipio        | STRING   | NULLABLE | Código IBGE de 7 dígitos do município declarante |
 | valor_real          | FLOAT    | NULLABLE | Valor do indicador, quando expresso em reais   |
+## Receitas orçamentárias municipais
 
+**Arquivo:** `base_de_dados_municipio_receitas_orcamentarias_2023_2024.csv`  
+**Fonte:** `basedosdados.br_me_siconfi.municipio_receitas_orcamentarias`
 
-
-
-municipio_receitas_orcamentarias
-file: base_de_dados_municipio_receitas_orcamentarias_2023_2024.csv
-fonte: basedosdados.br_me_siconfi.municipio_receitas_orcamentarias
-
-Descrição
+### Descrição
 Tabela de receitas orçamentárias a nível de município.
 
 
@@ -33,14 +39,12 @@ Tabela de receitas orçamentárias a nível de município.
 | sigla_uf        | STRING  | NULLABLE | Sigla da unidade da federação      |
 | id_municipio    | STRING  | NULLABLE | ID Município - IBGE 7 Dígitos      |
 | valor           | FLOAT   | NULLABLE | Valor                              |
+## PIB dos municípios
 
+**Arquivo:** `base_de_dados_PIB_Municipios_2022_2023.csv`  
+**Fonte:** [IBGE — Produto Interno Bruto dos Municípios](https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9088-produto-interno-bruto-dos-municipios.html)
 
-
-PIB_Municipios
-file: base_de_dados_PIB_Municipios_ 2022_2023.csv
-fonte: https://www.ibge.gov.br/estatisticas/economicas/contas-nacionais/9088-produto-interno-bruto-dos-municipios.html?=&t=downloads&utm_source=landing&utm_medium=explica&utm_campaign=pib
-
-Descrição
+### Descrição
 É o valor total de todos os bens e serviços finais produzidos no município naquele ano.
 
 | Nome do campo | Tipo | Modo | Descrição |
@@ -52,13 +56,12 @@ Descrição
 | Nome do Município | STRING | NULLABLE | Nome municipio |
 | Produto Interno Bruto, a preços correntes | FLOAT | NULLABLE | O valor está aos preços do próprio ano (preços nominais) |
 | Produto Interno Bruto per capita, a preços correntes | FLOAT | NULLABLE | O valor está aos preços do próprio ano (preços nominais) |
+## Bolsa Família
 
+**Arquivo:** `base_dados_bolsa_familia_2023_2024.csv`  
+**Fonte:** `basedosdados.br_cgu_beneficios_cidadao.novo_bolsa_familia`
 
-bolsa_familia
-file: base_dados_bolsa_familia_2023_2024.csv
-fonte: basedosdados.br_cgu_beneficios_cidadao.novo_bolsa_familia
-
-Descrição
+### Descrição
 Números do Novo Bolsa Família
 
 | Nome do campo | Tipo | Modo | Descrição |
