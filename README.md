@@ -205,6 +205,7 @@ Documentos específicos das pastas:
 
 | Tema | Documento |
 |---|---|
+| apresentacao | [apresentacao.pptx](docs/apresentacao/apresentacao.pptx) |
 | problema e escopo | [PROBLEMA_OBJETIVOS_ESCOPO.md](docs/PROBLEMA_OBJETIVOS_ESCOPO.md) |
 | fontes e granularidade | [FONTES_INTEGRACAO_GRANULARIDADE.md](docs/FONTES_INTEGRACAO_GRANULARIDADE.md) |
 | EDA e qualidade | [EDA_QUALIDADE_DADOS.md](docs/EDA_QUALIDADE_DADOS.md) |
