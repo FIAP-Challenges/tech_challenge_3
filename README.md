@@ -26,6 +26,11 @@ O notebook consolidado é a referência para reprodução integral. Os notebooks
 
 > Para navegar por toda a documentação, consulte o [índice técnico](docs/INDICE.md).
 
+
+## Link Apresentaçäo Executiva
+
+Segue aqui o link da [apresentaçäo executiva](https://youtu.be/IDaZaM82j6s)
+
 ## Problema e objetivo
 
 O objetivo central é avaliar em que medida variáveis contextuais disponíveis permitem estimar alfabetização e produzir evidências agregadas úteis para gestores e pesquisadores.
@@ -206,6 +211,7 @@ Documentos específicos das pastas:
 | Tema | Documento |
 |---|---|
 | apresentacao | [apresentacao.pptx](docs/apresentacao/apresentacao.pptx) |
+| apresentacao | [apresentacao.mp4](docs/apresentacao/apresentacao.mp4) |
 | problema e escopo | [PROBLEMA_OBJETIVOS_ESCOPO.md](docs/PROBLEMA_OBJETIVOS_ESCOPO.md) |
 | fontes e granularidade | [FONTES_INTEGRACAO_GRANULARIDADE.md](docs/FONTES_INTEGRACAO_GRANULARIDADE.md) |
 | EDA e qualidade | [EDA_QUALIDADE_DADOS.md](docs/EDA_QUALIDADE_DADOS.md) |
