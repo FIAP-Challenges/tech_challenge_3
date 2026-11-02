@@ -4,6 +4,7 @@
 
 - [Finalidade](#finalidade)
 - [Conteúdo e origem dos resultados](#conteúdo-e-origem-dos-resultados)
+- [Percurso de análise](#percurso-de-análise)
 - [Pré-requisitos e execução](#pré-requisitos-e-execução)
 - [Limitações e manutenção](#limitações-e-manutenção)
 - [Índice geral](INDICE.md)
@@ -26,9 +27,20 @@ Há três formas de apresentação dos resultados:
 
 Essa distinção significa que reexecutar o notebook não atualiza automaticamente todos os resultados a partir dos artefatos mais recentes. O notebook apresenta gráficos e tabelas nas saídas das células; não possui chamadas de exportação de figuras com `savefig` e não altera dados, modelos ou resultados externos. Salvar o notebook atualiza o próprio `.ipynb` com saídas e contagens; o Jupyter também pode criar checkpoints.
 
+## Percurso de análise
+
+As visualizações apoiam as perguntas norteadoras do projeto e a comunicação dos resultados consolidados:
+
+- **Desempenho e explicabilidade:** métricas, curva ROC, SHAP e importância por permutação previamente calculados.
+- **Infraestrutura e contexto socioeconômico:** comparações por faixa e correlações de INSE, considerando a cobertura e o caráter municipal dos indicadores.
+- **Continuidade municipal e finanças:** comparação entre períodos e indicadores financeiros/contextuais, respeitando a granularidade e as transformações das variáveis.
+- **Perfis e metas:** síntese dos clusters oficiais e cobertura das metas. A cobertura, isoladamente, não identifica municípios em risco.
+
+A execução localiza os CSVs necessários, prepara os indicadores para apresentação e exibe gráficos e tabelas. As regras de preparação, cálculo e classificação pertencem ao pipeline original; filtros e níveis de agregação distintos não devem ser comparados diretamente.
+
 ## Pré-requisitos e execução
 
-Para consultar a narrativa e as saídas salvas, abra o notebook. Para reexecutar, use Jupyter com pandas, Matplotlib e IPython disponíveis no kernel. O notebook importa pandas diretamente; confira sua disponibilidade no ambiente escolhido.
+Para consultar a narrativa e as saídas salvas, abra o notebook. Para reexecutar, use Jupyter com pandas, NumPy, Matplotlib e IPython disponíveis no kernel. Pathlib e base64 fazem parte da biblioteca padrão do Python. O notebook não depende de seaborn nem lê métricas de arquivos JSON na versão atual. O notebook importa pandas diretamente; confira sua disponibilidade no ambiente escolhido.
 
 Os CSVs de infraestrutura e finanças devem estar presentes e pertencer à mesma execução oficial dos valores fixos e imagens incorporadas. Executar o modular sobre a mesma pasta pode substituí-los por resultados de teste; nesse caso, o notebook poderá misturar referências. Para a apresentação oficial, use os artefatos do consolidado. A célula procura a raiz a partir do diretório atual e de seus ancestrais. Abra o notebook dentro do repositório e execute **Restart Kernel and Run All Cells** para preservar as dependências entre células.
 
