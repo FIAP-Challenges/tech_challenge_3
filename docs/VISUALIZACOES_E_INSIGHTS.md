@@ -1,121 +1,55 @@
-# Visualizações e Insights
+# Visualizações e insights
 
-## Objetivo
+## Índice
 
-O notebook tem como objetivo organizar e apresentar os resultados consolidados do projeto por meio de análises exploratórias, indicadores e gráficos.
+- [Finalidade](#finalidade)
+- [Conteúdo e origem dos resultados](#conteúdo-e-origem-dos-resultados)
+- [Percurso de análise](#percurso-de-análise)
+- [Pré-requisitos e execução](#pré-requisitos-e-execução)
+- [Limitações e manutenção](#limitações-e-manutenção)
+- [Índice geral](INDICE.md)
 
-Sua finalidade é facilitar a interpretação dos dados e apoiar a identificação de padrões relevantes para a alfabetização.
+## Finalidade
 
-As visualizações também apoiam a análise das perguntas norteadoras do projeto, relacionando os resultados obtidos aos indicadores de infraestrutura escolar, contexto socioeconômico, desempenho municipal e metas educacionais.
+O notebook [TC3_Visualizacoes_e_Insights.ipynb](../notebooks/TC3_Visualizacoes_e_Insights.ipynb) organiza uma síntese executiva das perguntas norteadoras para avaliação e apresentação. Reúne respostas, gráficos e ressalvas com base nos resultados já calculados pelo pipeline consolidado. Não treina modelos nem refaz a análise completa.
 
-O notebook utiliza resultados previamente produzidos pelo pipeline analítico, sem realizar novamente o treinamento dos modelos.
+Enquanto a [análise gerencial](ANALISE_GERENCIAL_RANDOM_FOREST.md) calcula probabilidades com o modelo serializado para comparar grupos reais do teste, este notebook apresenta uma narrativa visual de resultados previamente registrados.
 
-## Fontes de dados
+## Conteúdo e origem dos resultados
 
-As análises utilizam tabelas consolidadas, principalmente arquivos CSV disponíveis no diretório:
+O percurso inclui capacidade preditiva, curva ROC e métricas, SHAP, importância por permutação, infraestrutura, INSE, persistência municipal, finanças, clusters e cobertura das metas.
 
-`resultados/tabelas/`
+Há três formas de apresentação dos resultados:
 
-Também podem ser utilizados arquivos JSON contendo métricas de avaliação dos modelos.
+- Valores inseridos nas próprias células e tabelas, resumindo a execução registrada do pipeline.
+- Imagens de avaliação e SHAP incorporadas em base64, exibidas sem ler arquivos externos de imagem.
+- Análises de infraestrutura e finanças carregadas de `resultados/tabelas/02_infraestrutura_por_faixa_ano.csv` e `resultados/tabelas/07_financas_por_faixa_ano.csv`, respectivamente.
 
-Os conjuntos de dados contemplam informações relacionadas a:
+Essa distinção significa que reexecutar o notebook não atualiza automaticamente todos os resultados a partir dos artefatos mais recentes. O notebook apresenta gráficos e tabelas nas saídas das células; não possui chamadas de exportação de figuras com `savefig` e não altera dados, modelos ou resultados externos. Salvar o notebook atualiza o próprio `.ipynb` com saídas e contagens; o Jupyter também pode criar checkpoints.
 
-- Indicadores de alfabetização;
-- Infraestrutura escolar;
-- Índice de Nível Socioeconômico (INSE);
-- Indicadores municipais;
-- Agrupamentos de municípios (*clusters*);
-- Classificações de risco e metas educacionais;
-- Resultados e métricas dos modelos preditivos.
+## Percurso de análise
 
-As regras de preparação e consolidação dos dados pertencem às etapas anteriores do pipeline.
+As visualizações apoiam as perguntas norteadoras do projeto e a comunicação dos resultados consolidados:
 
-## Bibliotecas e ambiente
+- **Desempenho e explicabilidade:** métricas, curva ROC, SHAP e importância por permutação previamente calculados.
+- **Infraestrutura e contexto socioeconômico:** comparações por faixa e correlações de INSE, considerando a cobertura e o caráter municipal dos indicadores.
+- **Continuidade municipal e finanças:** comparação entre períodos e indicadores financeiros/contextuais, respeitando a granularidade e as transformações das variáveis.
+- **Perfis e metas:** síntese dos clusters oficiais e cobertura das metas. A cobertura, isoladamente, não identifica municípios em risco.
 
-O notebook utiliza Python em ambiente compatível com Jupyter.
+A execução localiza os CSVs necessários, prepara os indicadores para apresentação e exibe gráficos e tabelas. As regras de preparação, cálculo e classificação pertencem ao pipeline original; filtros e níveis de agregação distintos não devem ser comparados diretamente.
 
-As principais bibliotecas empregadas são:
+## Pré-requisitos e execução
 
-- **Pandas:** leitura e manipulação de dados.
-- **NumPy:** operações numéricas.
-- **Matplotlib:** construção de gráficos.
-- **Seaborn:** visualizações estatísticas.
-- **Pathlib:** gerenciamento de caminhos e diretórios.
-- **JSON:** leitura de métricas consolidadas.
+Para consultar a narrativa e as saídas salvas, abra o notebook. Para reexecutar, use Jupyter com pandas, NumPy, Matplotlib e IPython disponíveis no kernel. Pathlib e base64 fazem parte da biblioteca padrão do Python. O notebook não depende de seaborn nem lê métricas de arquivos JSON na versão atual. O notebook importa pandas diretamente; confira sua disponibilidade no ambiente escolhido.
 
-## Metodologia
+Os CSVs de infraestrutura e finanças devem estar presentes e pertencer à mesma execução oficial dos valores fixos e imagens incorporadas. Executar o modular sobre a mesma pasta pode substituí-los por resultados de teste; nesse caso, o notebook poderá misturar referências. Para a apresentação oficial, use os artefatos do consolidado. A célula procura a raiz a partir do diretório atual e de seus ancestrais. Abra o notebook dentro do repositório e execute **Restart Kernel and Run All Cells** para preservar as dependências entre células.
 
-O processo de análise e visualização é organizado nas seguintes etapas:
+A tabela de infraestrutura utiliza `feature`, `ano_referencia`, `faixa` e `taxa_observada`. O CSV financeiro deve incluir `feature`, `ano_referencia`, `faixa` e `taxa_observada`, além de `registros`, `feature_media` e `probabilidade_media` usados na tabela exibida. As variáveis financeiras esperadas são Bolsa Família, Fundeb, receitas e PIB per capita, com os nomes transformados definidos no código. Se o arquivo estiver ausente, gere-o pelas etapas correspondentes do [pipeline consolidado](../notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb).
 
-1. Localização dos arquivos no repositório.
-2. Carregamento das tabelas consolidadas.
-3. Inspeção das estruturas, colunas e valores ausentes.
-4. Seleção e preparação dos indicadores.
-5. Construção das visualizações.
-6. Interpretação dos resultados e identificação de limitações.
+## Limitações e manutenção
 
-As análises preservam os critérios de cálculo e classificação estabelecidos no pipeline original.
+Taxas observadas e probabilidades estimadas são medidas distintas. Importância e SHAP não demonstram causalidade; valores financeiros transformados não devem ser lidos diretamente em reais. A comparação temporal cobre apenas 2023 e 2024, com as restrições territoriais descritas na [documentação das fontes](FONTES_INTEGRACAO_GRANULARIDADE.md).
 
-## Visualizações e análises
+O gráfico de metas mostra sua cobertura, sem identificar sozinho quais municípios estão em risco. Para essa análise, consulte as estimativas agregadas e os produtos descritos em [metas e perguntas de negócio](METAS_PERGUNTAS_NEGOCIO.md). Os clusters são descritivos e incluem grupo pequeno, exigindo cautela.
 
-### Indicadores municipais e alfabetização
-
-Exploração dos indicadores de alfabetização e das diferenças observadas entre municípios, períodos e agrupamentos disponíveis.
-
-As comparações consideram a granularidade e a cobertura das informações utilizadas.
-
-### Infraestrutura escolar
-
-Análise das relações entre os indicadores de alfabetização e as condições de infraestrutura escolar, incluindo recursos educacionais e conectividade.
-
-As visualizações permitem identificar padrões e associações, sem estabelecer relações diretas de causalidade.
-
-### Contexto socioeconômico
-
-Exploração do Índice de Nível Socioeconômico (INSE) e das correlações disponíveis.
-
-Os resultados devem ser interpretados considerando que indicadores contextuais não representam necessariamente características individuais dos estudantes.
-
-### Importância das variáveis e resultados preditivos
-
-Apresentação de resultados previamente calculados pelo pipeline, incluindo métricas de avaliação e importância preditiva das variáveis, quando disponíveis.
-
-A importância de uma variável no modelo não representa, isoladamente, um efeito causal sobre a alfabetização.
-
-### Agrupamentos, risco e metas
-
-Exploração dos agrupamentos municipais e das classificações de risco relacionadas às metas educacionais.
-
-As categorias e os critérios utilizados seguem as definições presentes nas tabelas consolidadas do projeto.
-
-## Reprodutibilidade
-
-Para executar o notebook em outro ambiente:
-
-1. Obter o repositório do projeto, preservando sua estrutura de diretórios.
-2. Abrir o notebook na pasta `notebooks/`.
-3. Verificar a disponibilidade das bibliotecas Python necessárias.
-4. Confirmar a existência dos arquivos utilizados em `resultados/tabelas/` e nos demais diretórios referenciados.
-5. Ajustar o caminho da raiz do projeto, caso necessário.
-6. Executar as células na sequência apresentada.
-7. Conferir eventuais mensagens relacionadas a arquivos ausentes ou diferenças na estrutura das tabelas.
-
-A reprodução das visualizações depende da disponibilidade dos arquivos consolidados utilizados pelo notebook.
-
-## Limitações
-
-As análises apresentam algumas limitações metodológicas:
-
-- A disponibilidade dos indicadores pode variar entre municípios e períodos.
-- Diferenças na cobertura e composição das bases podem influenciar comparações temporais.
-- Resultados com filtros e níveis de agregação distintos não devem ser comparados diretamente.
-- Correlações e associações estatísticas não comprovam causalidade.
-- A importância preditiva das variáveis depende do método utilizado pelo modelo.
-- Probabilidades e projeções representam estimativas sujeitas a erro.
-- As classificações de risco devem respeitar os critérios estabelecidos no pipeline original.
-
-## Considerações finais
-
-O notebook de Visualizações e Insights complementa as etapas de processamento e modelagem ao transformar resultados consolidados em representações gráficas e análises interpretáveis.
-
-As visualizações contribuem para a compreensão dos indicadores educacionais, a identificação de padrões e a comunicação dos principais resultados, preservando as limitações metodológicas das informações utilizadas.
+Após nova execução oficial, confira os valores inseridos nas células, as imagens incorporadas, os textos e os CSVs de infraestrutura e finanças para manter a mesma referência de resultados. A fonte de verdade permanece o pipeline consolidado; este notebook é uma síntese para comunicação.

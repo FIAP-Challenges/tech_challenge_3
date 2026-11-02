@@ -46,6 +46,10 @@ Para cada fonte, registre procedência, data de aquisição, período, licença,
 
 O acesso à AWS não integra os notebooks oficiais. A Feature Table e demais produtos herdados devem estar presentes localmente. Fontes públicas podem ser obtidas pelo script documentado do projeto quando disponível.
 
+Use `python scripts/download_public_sources.py --list` para consultar as fontes automatizadas e `python scripts/download_public_sources.py --source NOME` para baixar uma delas. Os arquivos são gravados em `dados/fontes_originais/complementar/` ou `dados/fontes_originais/origem_publica/`, conforme a fonte. Arquivos existentes são preservados por padrão; `--overwrite` solicita sua substituição explicitamente.
+
+Cada execução bem-sucedida com fontes solicitadas gera um manifesto datado em `dados/dados_processados/manifests/manifesto_download_publico_<timestamp_UTC>.json`, com URL, caminho, tamanho e SHA-256 dos arquivos daquela chamada. Os manifestos anteriores são preservados.
+
 ## Integridade
 
 Para cada arquivo relevante, preserve:

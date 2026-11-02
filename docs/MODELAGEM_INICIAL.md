@@ -44,4 +44,4 @@ Resultados dessa fase são experimentais. Eles selecionam candidatos à otimiza�
 
 ## Saídas
 
-JSONs e tabelas comparativas ficam em `dados/modelagem/resultados/` e `resultados/metricas/fase_5/`, conforme o fluxo executado.
+Com a persistência habilitada, JSONs e tabelas comparativas ficam em `resultados/metricas/fase_5/`. Quando `SALVAR_ARTEFATOS=False`, o fluxo usa uma área temporária em vez de atualizar os resultados oficiais.

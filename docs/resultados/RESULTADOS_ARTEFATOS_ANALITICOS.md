@@ -8,6 +8,7 @@
 - [Métricas](#métricas)
 - [Tabelas](#tabelas)
 - [Figuras](#figuras)
+- [Análise gerencial e figuras para apresentação](#análise-gerencial-e-figuras-para-apresentação)
 - [Relatórios de execução](#relatórios-de-execução)
 - [Índice geral](../INDICE.md)
 
@@ -48,6 +49,31 @@ As tabelas finais incluem dicionários gerados, respostas quantitativas, anális
 ## Figuras
 
 As figuras apresentam resultados do pipeline oficial e das análises territoriais. Cada visualização deve informar universo, período, unidade, tratamento de ausências e limitação interpretativa relevante. Gráficos descritivos, importâncias e agrupamentos não devem ser apresentados como evidência causal.
+
+## Análise gerencial e figuras para apresentação
+
+A documentação própria de [Análise Gerencial do Random Forest](../ANALISE_GERENCIAL_RANDOM_FOREST.md) descreve método, entradas e execução do notebook. A [documentação de Visualizações e Insights](../VISUALIZACOES_E_INSIGHTS.md) explica o outro notebook de comunicação, voltado à síntese das perguntas norteadoras. Esta seção detalha os arquivos de figuras gerenciais.
+
+O [notebook de análise gerencial](../../notebooks/TC3_Analise_Gerencial_Random_Forest.ipynb) complementa o pipeline oficial com comparações entre grupos reais do teste. Ele carrega o modelo final e seus artefatos, sem realizar treinamento ou ajuste. As comparações são descritivas e preditivas, sem interpretação causal.
+
+Para reproduzir as figuras:
+
+1. Disponibilize os produtos do pipeline consolidado: `modelos/random_forest/modelo_pipeline.joblib`, `dados/dados_processados/preparado/manifesto_base_modelagem_com_chave_escola.json`, os Parquets indicados pelo campo `padrao_leitura` desse manifesto, `resultados/metricas/fase_7/resultado_final.json` e as tabelas `resultados/tabelas/importancia_permutacao.csv` e `resultados/tabelas/18_sensibilidade_sigla_uf.csv`.
+2. Use um ambiente compatível com o modelo serializado e suas versões registradas; consulte o [guia de execução](../GUIA_EXECUCAO_REPRODUTIBILIDADE.md).
+3. Abra o notebook gerencial a partir do projeto e execute **Restart Kernel and Run All Cells**. As células de gráficos dependem dos resultados das células anteriores.
+
+As quatro imagens são gravadas em `resultados/figuras/analise_gerencial/`; uma nova execução substitui os arquivos de mesmo nome.
+
+| Arquivo | Conteúdo e uso |
+|---|---|
+| `observado_vs_estimado_random_forest.png` | diferenças observadas e estimadas entre grupos; a comparação SP–CE fica fora deste gráfico |
+| `robustez_modelo_com_sem_uf.png` | comparação de AUC e Average Precision dos modelos com e sem UF, a partir da tabela de sensibilidade |
+| `painel_executivo_comparacoes_random_forest.png` | painel 16:9 com comparações e leituras para apresentação |
+| `quadro_compacto_powerpoint_random_forest.png` | quadro compacto para inserir no layout dos slides |
+
+Nos quadros, **Reg.** é a quantidade de registros, **Prev.** é a média das probabilidades do modelo e **Obs.** é a proporção observada de alfabetização no grupo. **pp** significa pontos percentuais; a variação estimada representa o grupo B menos o grupo A. Os indicadores de infraestrutura descrevem proporções municipais de escolas, sem confirmar o recurso na escola frequentada por cada aluno.
+
+Os [slides em PowerPoint](../apresentacao/apresentacao.pptx) e o vídeo da apresentação executiva ([MP4 local](../apresentacao/apresentacao.mp4) e [YouTube](https://youtu.be/IDaZaM82j6s)) são materiais de comunicação. O notebook gera as imagens, mas não atualiza automaticamente os slides ou o vídeo.
 
 ## Relatórios de execução
 

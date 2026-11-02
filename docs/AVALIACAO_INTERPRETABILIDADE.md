@@ -12,10 +12,10 @@
 ## Referência modular
 
 ```text
-notebooks/fase_7_avaliacao_independente/Modelo_Final_Random_Forest.ipynb
+notebooks/fase_7_avaliacao_independente/TC3-64_Modelo_Final_Random_Forest.ipynb
 ```
 
-Na base `origin/main`, o mesmo fluxo está incorporado ao notebook consolidado até que o particionamento seja integrado.
+O notebook modular está integrado à `main`. O mesmo fluxo também está incorporado ao notebook consolidado, que permanece a referência oficial para métricas e execução integral.
 
 ## Ambiente validado
 
@@ -38,7 +38,7 @@ Na base `origin/main`, o mesmo fluxo está incorporado ao notebook consolidado a
 
 O teste contém 581.591 registros. O desempenho é moderado e adequado para análise agregada, não para decisões individuais automatizadas.
 
-Uma segunda execução apresentou pequenas diferenças numéricas, sem alterar a seleção do modelo, a ordem de grandeza das métricas ou as conclusões analíticas. Esse comportamento é compatível com as tolerâncias documentadas na [comparação entre execuções](GUIA_EXECUCAO_REPRODUTIBILIDADE.md#14-comparação-e-equivalência-entre-execuções). Os valores da tabela acima, provenientes da execução consolidada validada, permanecem como resultados oficiais.
+A execução modular de teste preservou o modelo selecionado e apresentou métricas globais próximas, mas houve diferenças em recortes territoriais e na seleção exploratória de clusters, de três para quatro. Consulte os valores e limites da [comparação entre execuções](GUIA_EXECUCAO_REPRODUTIBILIDADE.md#14-comparação-e-equivalência-entre-execuções); essa proximidade global não representa equivalência de todas as conclusões analíticas. Os valores da tabela acima, provenientes da execução consolidada validada, permanecem como resultados oficiais.
 
 ## Interpretabilidade
 
