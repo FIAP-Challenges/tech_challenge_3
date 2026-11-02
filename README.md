@@ -181,6 +181,8 @@ Detalhes:
 
 ## Power BI
 
+Acesse o [painel interativo de alfabetização](https://app.powerbi.com/view?r=eyJrIjoiMjQzMGI0OWMtNDA3Zi00ZjFiLWI1NTYtOTE5MTRhMmE3ODlhIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9) pelo navegador. Para consultar o arquivo do relatório ou suas imagens, use os materiais abaixo.
+
 O [painel de alfabetização](docs/power_BI/TC3_Alfabetizacao.pbix) complementa os notebooks com cinco páginas: panorama, municípios e metas, infraestrutura escolar, contexto socioeconômico e síntese dos resultados. As [imagens das páginas](docs/power_BI/imagens/) permitem uma consulta estática sem abrir o Power BI Desktop.
 
 A [documentação do Power BI](docs/POWER_BI_ALFABETIZACAO.md) descreve fontes, filtros, granularidade, abertura e atualização. Para consultar o relatório salvo, abra o `.pbix`; para atualizar os dados, use as tabelas finais da execução oficial do consolidado e confira os caminhos no Power Query. O painel não treina modelos e não substitui as métricas oficiais.
