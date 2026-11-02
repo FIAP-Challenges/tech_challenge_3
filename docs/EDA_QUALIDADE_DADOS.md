@@ -48,4 +48,6 @@ Outliers financeiros podem refletir porte municipal. Transformações logarítmi
 
 ## Evidência e artefatos
 
+O TC3-71 é um notebook de comunicação dos resultados finais, não uma etapa de exploração inicial. Ele está em [fase 7](../notebooks/fase_7_avaliacao_independente/TC3-71_visualizacoes_resultados.ipynb) e deve ser executado depois do TC3-64 ou da execução integral do consolidado, quando suas tabelas já estiverem disponíveis.
+
 Tabelas ficam em `resultados/tabelas/` e figuras em `resultados/figuras/`. Todo gráfico final deve informar universo, período, unidade, tratamento de ausências e limitação relevante.

@@ -215,9 +215,11 @@ Os notebooks modulares explicam cada etapa separadamente. Uma execução isolada
 
 ### Notebooks de comunicação
 
+No fluxo modular, execute [TC3-71_visualizacoes_resultados.ipynb](../notebooks/fase_7_avaliacao_independente/TC3-71_visualizacoes_resultados.ipynb) após o TC3-64, que gera a avaliação e as tabelas finais. No fluxo integral, execute-o após a conclusão do consolidado. A localização anterior na fase 3 não indicava corretamente essa dependência. Não é necessário executar os notebooks gerencial ou de Insights antes do TC3-71.
+
 Depois de gerar os artefatos oficiais, consulte os procedimentos próprios de [Análise Gerencial do Random Forest](ANALISE_GERENCIAL_RANDOM_FOREST.md) e [Visualizações e Insights](VISUALIZACOES_E_INSIGHTS.md). O primeiro carrega o modelo serializado e depende de um ambiente compatível; o segundo usa resultados incorporados e um CSV financeiro, sem atualizar automaticamente todos os números.
 
-Para reexecutar Visualizações e Insights, confira também pandas, importado diretamente pelo notebook e não declarado explicitamente nos arquivos de requirements. No kernel escolhido, valide com `import pandas, matplotlib, IPython`; se pandas estiver ausente, instale-o nesse mesmo ambiente antes da execução.
+Para reexecutar Visualizações e Insights, use o ambiente atualizado dos arquivos de requirements, que declaram pandas explicitamente. No kernel escolhido, valide com `import pandas, matplotlib, IPython`. Se o ambiente foi criado antes da atualização das dependências, reinstale os requirements correspondentes ou reconstrua o contêiner conforme as instruções deste guia.
 
 ## 10. Dados e contratos
 
@@ -272,16 +274,18 @@ resultados/relatorios/status_execucao.json
 - o relatório termina com estado `concluido`;
 - o backend registrado corresponde ao esperado;
 - manifests, schemas e 18 features conferem;
-- não há sobreposição de grupos na validação;
+- não há sobreposição de grupos nas separações de validação agrupada da otimização; a sobreposição escolar do split oficial por aluno é diagnosticada separadamente;
 - o teste não foi usado no tuning;
 - métricas e artefatos finais são legíveis e coerentes.
 
 ## 14. Comparação e equivalência entre execuções
 
-As execuções integral e modular apresentaram pequenas diferenças numéricas, dentro do comportamento esperado para ambientes e caminhos de execução distintos. Essas variações podem decorrer do backend CPU ou GPU, das versões das bibliotecas, do paralelismo, da ordem de processamento e de operações numéricas não determinísticas.
+A execução modular de teste preservou as 18 features, os hiperparâmetros do modelo final, o limiar e os 581.591 registros de teste. O Random Forest permaneceu selecionado. O ROC AUC passou de 0,670483 no consolidado para 0,670605 no modular; o F1 passou de 0,639195 para 0,639193. A proximidade global não implica igualdade em cada território ou produto exploratório.
 
-A comparação preservou os elementos que definem a equivalência metodológica: esquema e população analisada, separação dos conjuntos, contrato das 18 features, prevenção de leakage, família do modelo selecionado e interpretação geral dos resultados. As métricas permaneceram na mesma ordem de grandeza e não alteraram as conclusões do projeto.
+A análise de clusters selecionou três grupos no consolidado (silhouette 0,240664) e quatro no modular (0,247371). Houve diferenças localizadas: o F1 do Pará passou de 0,1185 para 0,1768 e a diferença máxima nas probabilidades médias municipais chegou a 6,92 pontos percentuais em um recorte de 2023 com 31 registros. Categorias de risco também podem mudar perto de seus limites. Esses resultados exigem ressalva; não cabe afirmar equivalência de todas as conclusões analíticas.
 
-Esse resultado sustenta que o pipeline é executável e metodologicamente estável em mais de um percurso. A divergência, isoladamente, não prova a correção do código; a evidência de correção é formada em conjunto pelas validações de schema, splits, ausência de leakage, execução sem erros, artefatos produzidos e métricas dentro das tolerâncias esperadas.
+Backend, hardware, versões, paralelismo e ordem dos dados podem contribuir para variações. No agrupamento, a agregação sem ordenação explícita e a amostragem por posição são possíveis fontes de sensibilidade, mesmo com seed fixa. Essa hipótese não foi isolada em teste controlado. Não foi estabelecida uma tolerância formal de aprovação para todos os produtos; os números acima descrevem a comparação observada.
 
-Reprodução não exige igualdade bit a bit entre CPU e GPU. Compare contratos e métricas dentro de tolerância previamente definida. Para a entrega, os valores oficiais continuam sendo os registrados pelo notebook consolidado. Modelos Joblib não são garantidamente portáveis entre versões distintas do scikit-learn.
+Para a entrega, o consolidado continua sendo a fonte de verdade, incluindo os três clusters. Preserve seus artefatos e execute testes modulares em cópias separadas, sem substituir os resultados oficiais pelos de teste. Para os notebooks de apresentação, use modelo, tabelas, métricas, imagens e textos da mesma execução de referência.
+
+A execução sem erros demonstra viabilidade operacional, mas não prova, isoladamente, correção metodológica ou estabilidade territorial. Compare também contratos, população, splits, diagnósticos de leakage e resultados por recorte. O split oficial por aluno deve ser distinguido da validação agrupada da otimização. Modelos Joblib requerem ambiente compatível e não são garantidamente portáveis entre versões de scikit-learn.

@@ -22,17 +22,17 @@ Há três formas de apresentação dos resultados:
 
 - Valores inseridos nas próprias células e tabelas, resumindo a execução registrada do pipeline.
 - Imagens de avaliação e SHAP incorporadas em base64, exibidas sem ler arquivos externos de imagem.
-- Análise financeira carregada de `resultados/tabelas/07_financas_por_faixa_ano.csv`.
+- Análises de infraestrutura e finanças carregadas de `resultados/tabelas/02_infraestrutura_por_faixa_ano.csv` e `resultados/tabelas/07_financas_por_faixa_ano.csv`, respectivamente.
 
-Essa distinção significa que reexecutar o notebook não atualiza automaticamente todos os resultados a partir dos artefatos mais recentes. O notebook apresenta gráficos e tabelas nas saídas das células; não possui chamadas de exportação de figuras com `savefig`.
+Essa distinção significa que reexecutar o notebook não atualiza automaticamente todos os resultados a partir dos artefatos mais recentes. O notebook apresenta gráficos e tabelas nas saídas das células; não possui chamadas de exportação de figuras com `savefig` e não altera dados, modelos ou resultados externos. Salvar o notebook atualiza o próprio `.ipynb` com saídas e contagens; o Jupyter também pode criar checkpoints.
 
 ## Pré-requisitos e execução
 
 Para consultar a narrativa e as saídas salvas, abra o notebook. Para reexecutar, use Jupyter com pandas, Matplotlib e IPython disponíveis no kernel. O notebook importa pandas diretamente; confira sua disponibilidade no ambiente escolhido.
 
-O CSV financeiro deve estar presente. A célula procura a raiz a partir do diretório atual e de seus ancestrais. Abra o notebook dentro do repositório e execute **Restart Kernel and Run All Cells** para preservar as dependências entre células.
+Os CSVs de infraestrutura e finanças devem estar presentes e pertencer à mesma execução oficial dos valores fixos e imagens incorporadas. Executar o modular sobre a mesma pasta pode substituí-los por resultados de teste; nesse caso, o notebook poderá misturar referências. Para a apresentação oficial, use os artefatos do consolidado. A célula procura a raiz a partir do diretório atual e de seus ancestrais. Abra o notebook dentro do repositório e execute **Restart Kernel and Run All Cells** para preservar as dependências entre células.
 
-O CSV deve incluir `feature`, `ano_referencia`, `faixa` e `taxa_observada`, além de `registros`, `feature_media` e `probabilidade_media` usados na tabela exibida. As variáveis financeiras esperadas são Bolsa Família, Fundeb, receitas e PIB per capita, com os nomes transformados definidos no código. Se o arquivo estiver ausente, gere-o pelas etapas correspondentes do [pipeline consolidado](../notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb).
+A tabela de infraestrutura utiliza `feature`, `ano_referencia`, `faixa` e `taxa_observada`. O CSV financeiro deve incluir `feature`, `ano_referencia`, `faixa` e `taxa_observada`, além de `registros`, `feature_media` e `probabilidade_media` usados na tabela exibida. As variáveis financeiras esperadas são Bolsa Família, Fundeb, receitas e PIB per capita, com os nomes transformados definidos no código. Se o arquivo estiver ausente, gere-o pelas etapas correspondentes do [pipeline consolidado](../notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb).
 
 ## Limitações e manutenção
 
@@ -40,4 +40,4 @@ Taxas observadas e probabilidades estimadas são medidas distintas. Importância
 
 O gráfico de metas mostra sua cobertura, sem identificar sozinho quais municípios estão em risco. Para essa análise, consulte as estimativas agregadas e os produtos descritos em [metas e perguntas de negócio](METAS_PERGUNTAS_NEGOCIO.md). Os clusters são descritivos e incluem grupo pequeno, exigindo cautela.
 
-Após nova execução oficial, confira os valores inseridos nas células, as imagens incorporadas, os textos e o CSV financeiro para manter a mesma referência de resultados. A fonte de verdade permanece o pipeline consolidado; este notebook é uma síntese para comunicação.
+Após nova execução oficial, confira os valores inseridos nas células, as imagens incorporadas, os textos e os CSVs de infraestrutura e finanças para manter a mesma referência de resultados. A fonte de verdade permanece o pipeline consolidado; este notebook é uma síntese para comunicação.

@@ -99,7 +99,7 @@ Detalhes e evidências: [análise exploratória e qualidade dos dados](docs/EDA_
 
 O contrato final contém 18 features não constantes. Informações diretamente relacionadas à própria avaliação, como `proficiencia`, `presenca`, `preenchimento_caderno` e `caderno`, foram excluídas. Identificadores e chaves de controle também não são utilizados como features.
 
-Imputação, encoding e transformações são ajustados exclusivamente no treino. A seed padrão é 42 e a validação usa agrupamento por `chave_escola_ano` quando aplicável.
+Imputação, encoding e transformações são ajustados exclusivamente no treino. A seed padrão é 42. O `dataset_split` oficial é por aluno; o agrupamento por `chave_escola_ano` é aplicado nas separações de validação e na validação cruzada das etapas de otimização. Não se deve interpretar todo o split oficial como separado por escola/ano.
 
 O contrato de entrada reúne UF, rede, ano, variáveis financeiras transformadas, INSE, oito proporções municipais de infraestrutura e indicadores de ausência de cobertura. Manter esse contrato explícito permite comparar os algoritmos com as mesmas informações e verificar a compatibilidade entre base, pré-processamento e modelo final.
 
@@ -191,6 +191,8 @@ Dois notebooks complementam a avaliação acadêmica e a apresentação executiv
 
 Para uma leitura executiva das perguntas do trabalho, comece por Visualizações e Insights. Para examinar os contrastes entre grupos e a preparação das figuras gerenciais, consulte a Análise Gerencial. Nenhum dos dois treina ou ajusta o modelo. Os documentos próprios explicam entradas, execução, produtos e cuidados de atualização; o pipeline consolidado permanece a referência oficial.
 
+O [TC3-71 — visualizações dos resultados](notebooks/fase_7_avaliacao_independente/TC3-71_visualizacoes_resultados.ipynb) fica na fase 7 e deve ser executado após o TC3-64 ou após o consolidado completo, pois depende das tabelas finais já geradas.
+
 ### Fluxo consolidado
 
 ```text
@@ -215,7 +217,7 @@ O particionamento organiza a análise detalhada na seguinte sequência:
 
 Os identificadores presentes nos nomes de alguns notebooks servem apenas para rastreabilidade do desenvolvimento. A ordem de leitura e execução é definida pelas fases metodológicas acima, não pela numeração desses identificadores.
 
-A execução modular apresentou pequenas diferenças numéricas em relação à execução integral, sem alterar o modelo selecionado nem as conclusões do projeto. Essa estabilidade dentro das tolerâncias esperadas reforça a reprodutibilidade operacional; os valores oficiais permanecem os do pipeline consolidado. Consulte a [comparação entre execuções](docs/GUIA_EXECUCAO_REPRODUTIBILIDADE.md#14-comparação-e-equivalência-entre-execuções).
+A execução modular preservou o modelo selecionado e apresentou métricas globais próximas às da execução integral. Isso não garante igualdade nas análises territoriais: no teste da worktree, a seleção exploratória mudou de três para quatro clusters e alguns recortes municipais e por UF tiveram diferenças maiores. Os três clusters e os demais resultados do consolidado permanecem oficiais; os produtos da execução modular de teste devem ser tratados separadamente. Consulte a [comparação entre execuções](docs/GUIA_EXECUCAO_REPRODUTIBILIDADE.md#14-comparação-e-equivalência-entre-execuções).
 
 Consulte a [ordem detalhada e os modos de execução](docs/GUIA_EXECUCAO_REPRODUTIBILIDADE.md#9-formas-de-executar-os-notebooks).
 

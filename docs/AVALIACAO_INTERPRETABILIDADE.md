@@ -38,7 +38,7 @@ O notebook modular está integrado à `main`. O mesmo fluxo também está incorp
 
 O teste contém 581.591 registros. O desempenho é moderado e adequado para análise agregada, não para decisões individuais automatizadas.
 
-Uma segunda execução apresentou pequenas diferenças numéricas, sem alterar a seleção do modelo, a ordem de grandeza das métricas ou as conclusões analíticas. Esse comportamento é compatível com as tolerâncias documentadas na [comparação entre execuções](GUIA_EXECUCAO_REPRODUTIBILIDADE.md#14-comparação-e-equivalência-entre-execuções). Os valores da tabela acima, provenientes da execução consolidada validada, permanecem como resultados oficiais.
+A execução modular de teste preservou o modelo selecionado e apresentou métricas globais próximas, mas houve diferenças em recortes territoriais e na seleção exploratória de clusters, de três para quatro. Consulte os valores e limites da [comparação entre execuções](GUIA_EXECUCAO_REPRODUTIBILIDADE.md#14-comparação-e-equivalência-entre-execuções); essa proximidade global não representa equivalência de todas as conclusões analíticas. Os valores da tabela acima, provenientes da execução consolidada validada, permanecem como resultados oficiais.
 
 ## Interpretabilidade
 

@@ -48,7 +48,9 @@ Imputação, encoding e demais transformações são ajustados apenas no treino 
 
 ## Splits e grupos
 
-Separações preservam o teste e usam agrupamento por `chave_escola_ano` quando aplicável. Deve haver zero sobreposição de grupos entre treino e validação. Amostragens usam hash estável e seed 42.
+O `dataset_split` herdado da base principal separa treino, validação e teste por aluno. A preparação preserva esse split e diagnostica a sobreposição de `chave_escola_ano`; não reconstrói o teste como um conjunto de escolas inéditas. Portanto, a ausência de sobreposição escolar não pode ser atribuída ao split oficial como um todo.
+
+Nas etapas de otimização, a separação de desenvolvimento usa `GroupShuffleSplit` e a validação cruzada usa `StratifiedGroupKFold`, com agrupamento por `chave_escola_ano`. Nesses conjuntos agrupados deve haver zero sobreposição de grupos entre treino e validação. Essa chave é anual e anonimizada, sem garantir isolamento da mesma escola real entre anos. Amostragens usam hash estável e seed 42.
 
 ## Artefatos obrigatórios
 
