@@ -1,14 +1,28 @@
 # Power BI — Alfabetização
 
+## Índice
+
+- [Objetivo](#objetivo)
+- [Arquivos e fontes de dados](#arquivos-e-fontes-de-dados)
+- [Organização do relatório](#organização-do-relatório)
+- [Indicadores, medidas e filtros](#indicadores-medidas-e-filtros)
+- [Estrutura de entrega](#estrutura-de-entrega)
+- [Abertura e atualização em outro computador](#abertura-e-atualização-em-outro-computador)
+- [Publicação e validações](#publicação-e-validações)
+- [Limitações e interpretação](#limitações-e-interpretação)
+- [Considerações finais](#considerações-finais)
+
 ## Objetivo
 
 O relatório interativo organiza e apresenta indicadores relacionados à alfabetização, ao acompanhamento de metas educacionais, à infraestrutura escolar e ao contexto socioeconômico dos municípios. Seu objetivo é facilitar a exploração visual dos resultados consolidados do projeto e apoiar a interpretação das análises.
 
-O relatório complementa as análises desenvolvidas em Python e não realiza treinamento de modelos de aprendizado de máquina.
+O relatório complementa as análises desenvolvidas em Python e não realiza treinamento de modelos de aprendizado de máquina. Para atualizar suas fontes, primeiro gere os artefatos finais pelo TC3-64 no fluxo modular ou pelo pipeline consolidado completo. Para a entrega oficial, use as tabelas da execução consolidada, fonte de verdade do projeto; não misture tabelas de testes modulares com indicadores oficiais. Consultar o arquivo já salvo não exige reexecutar notebooks.
 
 ## Arquivos e fontes de dados
 
-**Relatório:** `TC3_Alfabetizacao.pbix`
+**Relatório:** [TC3_Alfabetizacao.pbix](power_BI/TC3_Alfabetizacao.pbix)
+
+Consulte o [índice técnico](INDICE.md) para o percurso completo e o [README principal](../README.md) para a visão geral do projeto.
 
 **Diretório de origem das tabelas:** `resultados/tabelas/`
 
@@ -78,7 +92,7 @@ Resultados apresentados em contextos de filtro distintos não são necessariamen
 ```text
 docs/
 ├── POWER_BI_ALFABETIZACAO.md
-└── power_bi/
+└── power_BI/
     ├── TC3_Alfabetizacao.pbix
     └── imagens/
         ├── 01_panorama_da_alfabetização.png
@@ -90,10 +104,18 @@ docs/
 
 As imagens permitem consultar uma representação estática das páginas diretamente no repositório. O arquivo `.pbix` mantém o relatório interativo.
 
+- [Panorama da alfabetização](power_BI/imagens/01_panorama_da_alfabetização.png)
+- [Municípios e metas](power_BI/imagens/02_municipios_e_metas.png)
+- [Infraestrutura escolar](power_BI/imagens/03_infraestrutura_escolar.png)
+- [Contexto socioeconômico](power_BI/imagens/04_contexto_socioeconômico.png)
+- [Síntese dos resultados](power_BI/imagens/05_síntese_dos_resultados.png)
+
+O `.pbix` e as imagens são artefatos de apresentação mantidos separadamente dos notebooks. Atualizar os CSVs não atualiza automaticamente os dados importados do relatório, as capturas ou a versão publicada; esses produtos precisam ser atualizados e conferidos antes de uma nova entrega.
+
 ## Abertura e atualização em outro computador
 
 1. Obter o repositório, preservando sua estrutura de diretórios.
-2. Abrir `docs/power_bi/TC3_Alfabetizacao.pbix` no Microsoft Power BI Desktop.
+2. Abrir `docs/power_BI/TC3_Alfabetizacao.pbix` no Microsoft Power BI Desktop.
 3. Navegar pelas cinco páginas para consultar os dados já importados e salvos no arquivo.
 4. **Somente se desejar atualizar os dados**, verificar a disponibilidade dos CSVs em `resultados/tabelas/`.
 5. Se necessário, abrir o Power Query e ajustar os caminhos das fontes para a cópia local do repositório.
@@ -103,7 +125,7 @@ As imagens permitem consultar uma representação estática das páginas diretam
 
 ## Publicação e validações
 
-Na versão preparada para entrega, foram conferidos os seguintes pontos:
+Na versão preparada para entrega, a documentação recebida da equipe registra as seguintes validações:
 
 - Existência e navegação pelas cinco páginas;
 - Reabertura do arquivo `.pbix` com carregamento normal das visualizações;

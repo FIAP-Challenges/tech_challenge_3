@@ -32,6 +32,8 @@ Esta pasta reúne a narrativa acadêmica, os contratos metodológicos e os proce
 
 ## Complementos
 
+- [Power BI: páginas, fontes, indicadores e atualização](POWER_BI_ALFABETIZACAO.md)
+
 - [Visualizações e insights: finalidade, fontes e execução](VISUALIZACOES_E_INSIGHTS.md)
 - [Análise gerencial do Random Forest: método, entradas e produtos](ANALISE_GERENCIAL_RANDOM_FOREST.md)
 
@@ -53,5 +55,7 @@ Esta pasta reúne a narrativa acadêmica, os contratos metodológicos e os proce
 - consolidado: `notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb`;
 - modular: notebooks organizados por fase metodológica para análise detalhada;
 - comunicação gerencial: [TC3_Analise_Gerencial_Random_Forest.ipynb](../notebooks/TC3_Analise_Gerencial_Random_Forest.ipynb), executado após a geração dos artefatos oficiais;
+- síntese visual: [TC3_Visualizacoes_e_Insights.ipynb](../notebooks/TC3_Visualizacoes_e_Insights.ipynb), após a geração das tabelas finais;
+- painel interativo: [TC3_Alfabetizacao.pbix](power_BI/TC3_Alfabetizacao.pbix), consultado no Power BI Desktop e atualizado com as tabelas da execução oficial;
 - resultados oficiais: `resultados/`;
 - ambiente e status: `resultados/relatorios/`.

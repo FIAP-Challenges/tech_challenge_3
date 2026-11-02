@@ -13,6 +13,7 @@ Machine Learning e inteligência analítica para alfabetização no Brasil.
 - [Modelagem e seleção](#modelagem-e-seleção)
 - [Avaliação final](#avaliação-final)
 - [Interpretação e aplicação](#interpretação-e-aplicação)
+- [Power BI](#power-bi)
 - [Notebooks](#notebooks)
 - [Execução rápida](#execução-rápida)
 - [Estrutura do repositório](#estrutura-do-repositório)
@@ -178,6 +179,12 @@ Detalhes:
 - [metas e perguntas de negócio](docs/METAS_PERGUNTAS_NEGOCIO.md);
 - [limitações, ética e uso responsável](docs/LIMITACOES_ETICA.md).
 
+## Power BI
+
+O [painel de alfabetização](docs/power_BI/TC3_Alfabetizacao.pbix) complementa os notebooks com cinco páginas: panorama, municípios e metas, infraestrutura escolar, contexto socioeconômico e síntese dos resultados. As [imagens das páginas](docs/power_BI/imagens/) permitem uma consulta estática sem abrir o Power BI Desktop.
+
+A [documentação do Power BI](docs/POWER_BI_ALFABETIZACAO.md) descreve fontes, filtros, granularidade, abertura e atualização. Para consultar o relatório salvo, abra o `.pbix`; para atualizar os dados, use as tabelas finais da execução oficial do consolidado e confira os caminhos no Power Query. O painel não treina modelos e não substitui as métricas oficiais.
+
 ## Notebooks
 
 ### Notebooks de comunicação dos resultados
@@ -186,12 +193,12 @@ Dois notebooks complementam a avaliação acadêmica e a apresentação executiv
 
 | Notebook | Finalidade | Documentação própria |
 |---|---|---|
-| [TC3_Visualizacoes_e_Insights.ipynb](notebooks/TC3_Visualizacoes_e_Insights.ipynb) | síntese visual das perguntas norteadoras, com resultados previamente registrados, imagens incorporadas e leitura do CSV financeiro | [Visualizações e insights](docs/VISUALIZACOES_E_INSIGHTS.md) |
+| [TC3_Visualizacoes_e_Insights.ipynb](notebooks/TC3_Visualizacoes_e_Insights.ipynb) | síntese visual das perguntas norteadoras, com resultados previamente registrados, imagens incorporadas e leitura dos CSVs de infraestrutura e finanças | [Visualizações e insights](docs/VISUALIZACOES_E_INSIGHTS.md) |
 | [TC3_Analise_Gerencial_Random_Forest.ipynb](notebooks/TC3_Analise_Gerencial_Random_Forest.ipynb) | carrega o modelo final, calcula probabilidades para grupos reais do teste e gera quatro figuras para apresentação | [Análise gerencial do Random Forest](docs/ANALISE_GERENCIAL_RANDOM_FOREST.md) |
 
 Para uma leitura executiva das perguntas do trabalho, comece por Visualizações e Insights. Para examinar os contrastes entre grupos e a preparação das figuras gerenciais, consulte a Análise Gerencial. Nenhum dos dois treina ou ajusta o modelo. Os documentos próprios explicam entradas, execução, produtos e cuidados de atualização; o pipeline consolidado permanece a referência oficial.
 
-O [TC3-71 — visualizações dos resultados](notebooks/fase_7_avaliacao_independente/TC3-71_visualizacoes_resultados.ipynb) fica na fase 7 e deve ser executado após o TC3-64 ou após o consolidado completo, pois depende das tabelas finais já geradas.
+O [notebook de Visualizações e Insights](notebooks/TC3_Visualizacoes_e_Insights.ipynb) deve ser executado após o TC3-64 ou após o consolidado completo, usando as tabelas da mesma execução de referência. Ele substitui o notebook legado de visualizações.
 
 ### Fluxo consolidado
 
@@ -299,6 +306,7 @@ Documentos específicos das pastas:
 | aquisição e linhagem | [AQUISICAO_LINHAGEM_FONTES.md](docs/AQUISICAO_LINHAGEM_FONTES.md) |
 | execução CPU/GPU | [GUIA_EXECUCAO_REPRODUTIBILIDADE.md](docs/GUIA_EXECUCAO_REPRODUTIBILIDADE.md) |
 | navegação e evidências | [GUIA_NAVEGACAO_EVIDENCIAS.md](docs/GUIA_NAVEGACAO_EVIDENCIAS.md) |
+| painel interativo, fontes e atualização no Power BI | [POWER_BI_ALFABETIZACAO.md](docs/POWER_BI_ALFABETIZACAO.md) |
 | síntese visual das perguntas norteadoras | [VISUALIZACOES_E_INSIGHTS.md](docs/VISUALIZACOES_E_INSIGHTS.md) |
 | comparações gerenciais com o modelo final | [ANALISE_GERENCIAL_RANDOM_FOREST.md](docs/ANALISE_GERENCIAL_RANDOM_FOREST.md) |
 | interpretação dos resultados e reprodução das figuras gerenciais | [RESULTADOS_ARTEFATOS_ANALITICOS.md](docs/resultados/RESULTADOS_ARTEFATOS_ANALITICOS.md) |

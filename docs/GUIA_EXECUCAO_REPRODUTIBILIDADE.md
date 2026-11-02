@@ -215,11 +215,15 @@ Os notebooks modulares explicam cada etapa separadamente. Uma execução isolada
 
 ### Notebooks de comunicação
 
-No fluxo modular, execute [TC3-71_visualizacoes_resultados.ipynb](../notebooks/fase_7_avaliacao_independente/TC3-71_visualizacoes_resultados.ipynb) após o TC3-64, que gera a avaliação e as tabelas finais. No fluxo integral, execute-o após a conclusão do consolidado. A localização anterior na fase 3 não indicava corretamente essa dependência. Não é necessário executar os notebooks gerencial ou de Insights antes do TC3-71.
+No fluxo modular, execute [TC3_Visualizacoes_e_Insights.ipynb](../notebooks/TC3_Visualizacoes_e_Insights.ipynb) após o TC3-64, que gera a avaliação e as tabelas finais. No fluxo integral, execute-o após a conclusão do consolidado. Não é necessário executar o notebook gerencial antes de Insights. Use os artefatos da mesma execução de referência dos valores fixos e imagens incorporadas.
 
-Depois de gerar os artefatos oficiais, consulte os procedimentos próprios de [Análise Gerencial do Random Forest](ANALISE_GERENCIAL_RANDOM_FOREST.md) e [Visualizações e Insights](VISUALIZACOES_E_INSIGHTS.md). O primeiro carrega o modelo serializado e depende de um ambiente compatível; o segundo usa resultados incorporados e um CSV financeiro, sem atualizar automaticamente todos os números.
+Depois de gerar os artefatos oficiais, consulte os procedimentos próprios de [Análise Gerencial do Random Forest](ANALISE_GERENCIAL_RANDOM_FOREST.md) e [Visualizações e Insights](VISUALIZACOES_E_INSIGHTS.md). O primeiro carrega o modelo serializado e depende de um ambiente compatível; o segundo apresenta métricas, textos e imagens incorporados da execução oficial e carrega os CSVs de infraestrutura e finanças disponíveis em `resultados/tabelas/`. Esses CSVs devem pertencer à mesma execução de referência dos valores incorporados. Reexecutar o notebook atualiza as visualizações que leem arquivos, mas não recalcula automaticamente os números fixos nem substitui as imagens incorporadas.
 
 Para reexecutar Visualizações e Insights, use o ambiente atualizado dos arquivos de requirements, que declaram pandas explicitamente. No kernel escolhido, valide com `import pandas, matplotlib, IPython`. Se o ambiente foi criado antes da atualização das dependências, reinstale os requirements correspondentes ou reconstrua o contêiner conforme as instruções deste guia.
+
+### Painel Power BI
+
+O [Power BI](POWER_BI_ALFABETIZACAO.md) é uma etapa complementar de exploração e comunicação. A abertura do `.pbix` permite consultar os dados já importados. Para atualizar o painel, gere antes as tabelas finais pelo TC3-64 ou pelo consolidado completo, use a execução oficial de referência e ajuste os caminhos no Power Query conforme a documentação própria. As imagens e a publicação no serviço não são atualizadas automaticamente pelos notebooks.
 
 ## 10. Dados e contratos
 

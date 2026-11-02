@@ -1,0 +1,33 @@
+﻿TECH CHALLENGE FIAP - FASE 3
+Machine Learning e inteligência analítica para alfabetização no Brasil
+
+RESUMO
+O projeto integra dados educacionais, socioeconômicos, financeiros e de
+infraestrutura para estimar a probabilidade de alfabetização nas redes
+estadual e municipal, com dados de 2023 e 2024. O trabalho inclui análise
+exploratória, comparação de modelos, avaliação independente e interpretação
+dos resultados. O Random Forest foi selecionado como modelo final, com ROC AUC
+de 0,67048 no teste. As análises apoiam a compreensão de padrões educacionais,
+sem estabelecer causalidade.
+
+ACESSO AO TRABALHO
+
+Repositório GitHub - código, notebooks, documentação e resultados:
+https://github.com/FIAP-Challenges/tech_challenge_3
+Para iniciar a leitura, consulte o README principal do repositório.
+
+Vídeo da apresentação executiva:
+https://youtu.be/IDaZaM82j6s
+
+Painel Power BI:
+https://app.powerbi.com/view?r=eyJrIjoiMjQzMGI0OWMtNDA3Zi00ZjFiLWI1NTYtOTE5MTRhMmE3ODlhIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9
+Disponível no link acima.
+
+Arquivo do Power BI no repositório (abrir no Power BI Desktop):
+docs/power_BI/TC3_Alfabetizacao.pbix
+
+Documentação do painel e instruções para abertura e atualização:
+docs/POWER_BI_ALFABETIZACAO.md
+
+Imagens das cinco páginas para consulta sem o Power BI Desktop:
+docs/power_BI/imagens/

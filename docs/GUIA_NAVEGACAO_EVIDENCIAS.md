@@ -19,7 +19,8 @@ Este guia organiza as principais evidências metodológicas, executáveis e docu
 2. Consultar o [pipeline consolidado](../notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb) para reprodução integral e resultados oficiais.
 3. Usar os notebooks modulares disponíveis para examinar em detalhe as decisões de cada etapa.
 4. Consultar os documentos temáticos abaixo para verificar contratos metodológicos, justificativas e limitações.
-5. Para comunicação dos resultados, consultar o [notebook gerencial](../notebooks/TC3_Analise_Gerencial_Random_Forest.ipynb), a [documentação das figuras](resultados/RESULTADOS_ARTEFATOS_ANALITICOS.md#análise-gerencial-e-figuras-para-apresentação) e a [apresentação executiva](../README.md#apresentação-executiva), com slides e vídeo.
+5. Para a síntese das perguntas norteadoras, consultar [Visualizações e Insights](VISUALIZACOES_E_INSIGHTS.md). Para exploração interativa, consultar o [Power BI](POWER_BI_ALFABETIZACAO.md) ou as [imagens das cinco páginas](power_BI/imagens/).
+6. Para comunicação dos resultados, consultar o [notebook gerencial](../notebooks/TC3_Analise_Gerencial_Random_Forest.ipynb), a [documentação das figuras](resultados/RESULTADOS_ARTEFATOS_ANALITICOS.md#análise-gerencial-e-figuras-para-apresentação) e a [apresentação executiva](../README.md#apresentação-executiva), com slides e vídeo.
 
 ## Mapa de evidências
 
@@ -37,6 +38,8 @@ Este guia organiza as principais evidências metodológicas, executáveis e docu
 | aplicação ao negócio | metas, perguntas analíticas e regras de resposta | [Metas e perguntas de negócio](METAS_PERGUNTAS_NEGOCIO.md) |
 | responsabilidade | limitações, riscos, restrições de uso e cuidados éticos | [Limitações e ética](LIMITACOES_ETICA.md) |
 | reprodução | ambientes CPU e GPU, Docker, hardware, validação, parada e reconstrução | [Guia de execução e reprodutibilidade](GUIA_EXECUCAO_REPRODUTIBILIDADE.md) |
+| síntese visual | perguntas norteadoras, métricas oficiais, infraestrutura, INSE, finanças, clusters e cobertura de metas | [Visualizações e Insights](VISUALIZACOES_E_INSIGHTS.md) |
+| painel interativo | cinco páginas com filtros territoriais, indicadores e metas, além de capturas estáticas | [Power BI — Alfabetização](POWER_BI_ALFABETIZACAO.md) |
 | comunicação gerencial | comparações entre grupos reais do teste, quatro figuras para apresentação, slides e vídeo; complementam a referência oficial | [Análise gerencial e figuras para apresentação](resultados/RESULTADOS_ARTEFATOS_ANALITICOS.md#análise-gerencial-e-figuras-para-apresentação) |
 
 ## Referência executável
