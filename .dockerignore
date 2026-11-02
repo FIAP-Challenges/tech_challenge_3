@@ -9,5 +9,5 @@ laboratorio
 output
 resultados
 modelos
-dados/processados
-dados/saidas_finais
+dados/dados_processados
+dados/dados_analiticos

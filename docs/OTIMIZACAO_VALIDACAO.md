@@ -49,4 +49,4 @@ O modelo oficial é o Random Forest selecionado antes do acesso ao teste. O pipe
 
 ## Saídas
 
-Resultados ficam em `dados/modelagem/fase_6_resultados/` e `resultados/metricas/fase_6/`.
+Com a persistência habilitada, os resultados ficam em `resultados/metricas/fase_6/`. Quando `SALVAR_ARTEFATOS=False`, o fluxo usa uma área temporária em vez de atualizar os resultados oficiais.

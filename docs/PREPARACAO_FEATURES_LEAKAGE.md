@@ -15,10 +15,10 @@
 A preparação consolidada do fluxo particionado é apresentada em:
 
 ```text
-notebooks/fase_4_preparacao/TC3_Main_Fluxo_Unificado_Fase4_Preparacao_Baseline_Metas_Chave_Escola.ipynb
+notebooks/fase_4_preparacao/TC3-49_Fluxo_Unificado_Preparacao.ipynb
 ```
 
-Enquanto essa estrutura não estiver integrada à `main`, a referência executável permanece `notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb`.
+O notebook modular está integrado à `main`. A referência oficial para execução integral permanece `notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb`.
 
 ## Features finais
 

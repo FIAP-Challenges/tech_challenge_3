@@ -12,10 +12,10 @@
 ## Referência modular
 
 ```text
-notebooks/fase_7_avaliacao_independente/Modelo_Final_Random_Forest.ipynb
+notebooks/fase_7_avaliacao_independente/TC3-64_Modelo_Final_Random_Forest.ipynb
 ```
 
-Na base `origin/main`, o mesmo fluxo está incorporado ao notebook consolidado até que o particionamento seja integrado.
+O notebook modular está integrado à `main`. O mesmo fluxo também está incorporado ao notebook consolidado, que permanece a referência oficial para métricas e execução integral.
 
 ## Ambiente validado
 

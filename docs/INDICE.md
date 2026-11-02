@@ -32,6 +32,12 @@ Esta pasta reúne a narrativa acadêmica, os contratos metodológicos e os proce
 
 ## Complementos
 
+- [Visualizações e insights: finalidade, fontes e execução](VISUALIZACOES_E_INSIGHTS.md)
+- [Análise gerencial do Random Forest: método, entradas e produtos](ANALISE_GERENCIAL_RANDOM_FOREST.md)
+
+- [Apresentação executiva: slides e vídeo](../README.md#apresentação-executiva)
+- [Análise gerencial e reprodução das figuras para apresentação](resultados/RESULTADOS_ARTEFATOS_ANALITICOS.md#análise-gerencial-e-figuras-para-apresentação)
+
 - [Guia de navegação e evidências](GUIA_NAVEGACAO_EVIDENCIAS.md)
 - [Catálogo de variáveis da `ml_aluno`](dados/CATALOGO_VARIAVEIS_ML_ALUNO.md)
 - [Dicionário das bases complementares](dados/DICIONARIO_BASES_COMPLEMENTARES.md)
@@ -46,5 +52,6 @@ Esta pasta reúne a narrativa acadêmica, os contratos metodológicos e os proce
 
 - consolidado: `notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb`;
 - modular: notebooks organizados por fase metodológica para análise detalhada;
+- comunicação gerencial: [TC3_Analise_Gerencial_Random_Forest.ipynb](../notebooks/TC3_Analise_Gerencial_Random_Forest.ipynb), executado após a geração dos artefatos oficiais;
 - resultados oficiais: `resultados/`;
 - ambiente e status: `resultados/relatorios/`.

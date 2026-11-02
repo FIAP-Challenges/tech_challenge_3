@@ -19,6 +19,7 @@ Este guia organiza as principais evidências metodológicas, executáveis e docu
 2. Consultar o [pipeline consolidado](../notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb) para reprodução integral e resultados oficiais.
 3. Usar os notebooks modulares disponíveis para examinar em detalhe as decisões de cada etapa.
 4. Consultar os documentos temáticos abaixo para verificar contratos metodológicos, justificativas e limitações.
+5. Para comunicação dos resultados, consultar o [notebook gerencial](../notebooks/TC3_Analise_Gerencial_Random_Forest.ipynb), a [documentação das figuras](resultados/RESULTADOS_ARTEFATOS_ANALITICOS.md#análise-gerencial-e-figuras-para-apresentação) e a [apresentação executiva](../README.md#apresentação-executiva), com slides e vídeo.
 
 ## Mapa de evidências
 
@@ -27,7 +28,7 @@ Este guia organiza as principais evidências metodológicas, executáveis e docu
 | problema e objetivo | definição da população, target, objetivo preditivo e limites de uso | [Problema, objetivos e escopo](PROBLEMA_OBJETIVOS_ESCOPO.md) |
 | fontes e integração | origem dos dados, chaves, granularidade, temporalidade e cobertura | [Fontes, integração e granularidade](FONTES_INTEGRACAO_GRANULARIDADE.md) e [Aquisição e linhagem](AQUISICAO_LINHAGEM_FONTES.md) |
 | entendimento da base | auditoria da feature table, catálogo de variáveis, seleção inicial e análise de leakage | [notebooks da fase 2](../notebooks/fase_2_entendimento_base_dados/) e [Preparação, features e leakage](PREPARACAO_FEATURES_LEAKAGE.md) |
-| análise exploratória | distribuição do target e das features, nulos, outliers, relações territoriais e temporais | [notebooks da fase 3](../notebooks/fase_3_analise_exploratória_de_dados/) e [EDA e qualidade](EDA_QUALIDADE_DADOS.md) |
+| análise exploratória | distribuição do target e das features, nulos, outliers, relações territoriais e temporais | [notebooks da fase 3](../notebooks/fase_3_analise_exploratoria_de_dados/) e [EDA e qualidade](EDA_QUALIDADE_DADOS.md) |
 | preparação e prevenção de leakage | contrato das 18 features, exclusões, imputação, encoding e separação dos conjuntos | [Preparação, features e leakage](PREPARACAO_FEATURES_LEAKAGE.md) |
 | modelagem inicial | baseline e comparação das famílias de modelos | [Modelagem inicial](MODELAGEM_INICIAL.md) |
 | otimização e seleção | validação, busca de hiperparâmetros e escolha do Random Forest | [Otimização e validação](OTIMIZACAO_VALIDACAO.md) |
@@ -36,8 +37,11 @@ Este guia organiza as principais evidências metodológicas, executáveis e docu
 | aplicação ao negócio | metas, perguntas analíticas e regras de resposta | [Metas e perguntas de negócio](METAS_PERGUNTAS_NEGOCIO.md) |
 | responsabilidade | limitações, riscos, restrições de uso e cuidados éticos | [Limitações e ética](LIMITACOES_ETICA.md) |
 | reprodução | ambientes CPU e GPU, Docker, hardware, validação, parada e reconstrução | [Guia de execução e reprodutibilidade](GUIA_EXECUCAO_REPRODUTIBILIDADE.md) |
+| comunicação gerencial | comparações entre grupos reais do teste, quatro figuras para apresentação, slides e vídeo; complementam a referência oficial | [Análise gerencial e figuras para apresentação](resultados/RESULTADOS_ARTEFATOS_ANALITICOS.md#análise-gerencial-e-figuras-para-apresentação) |
 
 ## Referência executável
+
+Para comunicação, consulte a documentação própria de [Visualizações e Insights](VISUALIZACOES_E_INSIGHTS.md), síntese das perguntas norteadoras, e da [Análise Gerencial do Random Forest](ANALISE_GERENCIAL_RANDOM_FOREST.md), comparação de grupos reais com o modelo final. Os documentos distinguem as fontes, os pré-requisitos e a atualização de cada notebook.
 
 O arquivo [TC3_Pipeline_Completo_Alfabetizacao.ipynb](../notebooks/TC3_Pipeline_Completo_Alfabetizacao.ipynb) é a fonte de verdade para a execução integral, as métricas finais e os artefatos oficiais. Ele foi mantido para permitir o processamento sequencial sem intervenção entre etapas, inclusive durante execuções noturnas.
 

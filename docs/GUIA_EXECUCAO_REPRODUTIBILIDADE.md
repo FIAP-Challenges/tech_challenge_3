@@ -199,7 +199,7 @@ Ele é a referência para reprodução integral, decisões metodológicas oficia
 
 ### Fluxo modular para análise acadêmica
 
-O particionamento facilita a avaliação detalhada pelo professor. Após a integração dos notebooks modulares na `main`, a ordem será:
+O particionamento facilita a avaliação detalhada pelo professor. Os notebooks modulares estão integrados à `main` e seguem esta ordem:
 
 1. auditoria, entendimento e integração das bases;
 2. análise exploratória e qualidade dos dados;
@@ -212,6 +212,12 @@ O particionamento facilita a avaliação detalhada pelo professor. Após a integ
 Nos notebooks modulares, siga a organização das pastas por fase e a sequência metodológica acima. Identificadores presentes nos nomes dos arquivos são usados para rastreabilidade e não determinam, isoladamente, a ordem de execução.
 
 Os notebooks modulares explicam cada etapa separadamente. Uma execução isolada pode produzir resultados experimentais ligeiramente diferentes. Quando houver divergência, a seleção oficial e as métricas finais são as registradas pelo pipeline consolidado e pelos artefatos aprovados.
+
+### Notebooks de comunicação
+
+Depois de gerar os artefatos oficiais, consulte os procedimentos próprios de [Análise Gerencial do Random Forest](ANALISE_GERENCIAL_RANDOM_FOREST.md) e [Visualizações e Insights](VISUALIZACOES_E_INSIGHTS.md). O primeiro carrega o modelo serializado e depende de um ambiente compatível; o segundo usa resultados incorporados e um CSV financeiro, sem atualizar automaticamente todos os números.
+
+Para reexecutar Visualizações e Insights, confira também pandas, importado diretamente pelo notebook e não declarado explicitamente nos arquivos de requirements. No kernel escolhido, valide com `import pandas, matplotlib, IPython`; se pandas estiver ausente, instale-o nesse mesmo ambiente antes da execução.
 
 ## 10. Dados e contratos
 
