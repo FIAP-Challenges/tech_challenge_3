@@ -1,0 +1,57 @@
+# Avaliação final e interpretabilidade
+
+## Índice
+
+- [Referência modular](#referência-modular)
+- [Ambiente validado](#ambiente-validado)
+- [Resultado no teste independente](#resultado-no-teste-independente)
+- [Interpretabilidade](#interpretabilidade)
+- [Artefatos](#artefatos)
+- [Índice geral](INDICE.md)
+
+## Referência modular
+
+```text
+notebooks/fase_7_avaliacao_independente/TC3-64_Modelo_Final_Random_Forest.ipynb
+```
+
+O notebook modular está integrado à `main`. O mesmo fluxo também está incorporado ao notebook consolidado, que permanece a referência oficial para métricas e execução integral.
+
+## Ambiente validado
+
+- Python 3.12.11;
+- scikit-learn 1.7.2;
+- Polars 2.0.0;
+- RAPIDS cuML;
+- NVIDIA GeForce RTX 3050 Laptop com 6 GB de VRAM;
+- seed 42;
+- SHAP executado em 100 observações.
+
+## Resultado no teste independente
+
+| Métrica | Valor |
+|---|---:|
+| ROC AUC | 0,67048 |
+| Average Precision | 0,68410 |
+| Balanced Accuracy | 0,61962 |
+| F1 | 0,63919 |
+
+O teste contém 581.591 registros. O desempenho é moderado e adequado para análise agregada, não para decisões individuais automatizadas.
+
+A execução modular de teste preservou o modelo selecionado e apresentou métricas globais próximas, mas houve diferenças em recortes territoriais e na seleção exploratória de clusters, de três para quatro. Consulte os valores e limites da [comparação entre execuções](GUIA_EXECUCAO_REPRODUTIBILIDADE.md#14-comparação-e-equivalência-entre-execuções); essa proximidade global não representa equivalência de todas as conclusões analíticas. Os valores da tabela acima, provenientes da execução consolidada validada, permanecem como resultados oficiais.
+
+## Interpretabilidade
+
+Importância por permutação, SHAP e análise de sensibilidade ajudam a descrever o comportamento do modelo. As variáveis mais relevantes são sinais preditivos contextuais; não demonstram causa.
+
+A sensibilidade com e sem `sigla_uf` mede dependência territorial. Pequenas mudanças de métrica não autorizam interpretação causal da UF.
+
+## Artefatos
+
+- pipeline/modelo serializado;
+- métricas finais em JSON;
+- previsões agregadas por município;
+- métricas por UF, rede e ano;
+- importância por permutação;
+- figuras de curvas, calibração e interpretação;
+- relatório do ambiente e status da execução.

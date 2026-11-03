@@ -20,15 +20,15 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SOURCES = {
     "censo_escolar_2023": {
         "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2023.zip",
-        "destination": "dados/complementar/microdados_ed_basica_2023.zip",
+        "destination": "dados/fontes_originais/complementar/microdados_ed_basica_2023.zip",
     },
     "pib_municipios_2022": {
         "url": "https://ftp.ibge.gov.br/Pib_Municipios/2022_2023/xlsx/tabelas_completas_2022.xlsx",
-        "destination": "dados/origem_publica/pib/tabelas_completas_2022.xlsx",
+        "destination": "dados/fontes_originais/origem_publica/pib/tabelas_completas_2022.xlsx",
     },
     "pib_municipios_2023": {
         "url": "https://ftp.ibge.gov.br/Pib_Municipios/2022_2023/xlsx/tabelas_completas_2023.xlsx",
-        "destination": "dados/origem_publica/pib/tabelas_completas_2023.xlsx",
+        "destination": "dados/fontes_originais/origem_publica/pib/tabelas_completas_2023.xlsx",
     },
 }
 
@@ -82,13 +82,19 @@ def main() -> int:
             record["source"] = name
             records.append(record)
             print(f"{record['status']}: {name} -> {record['local_path']}")
+        generated_at = datetime.now(timezone.utc)
         manifest = {
-            "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+            "generated_at_utc": generated_at.isoformat(),
             "downloads": records,
         }
-        path = ROOT / "dados" / "origem_publica" / "manifesto_download_publico.json"
+        timestamp = generated_at.strftime("%Y%m%dT%H%M%S%fZ")
+        path = (
+            ROOT / "dados" / "dados_processados" / "manifests"
+            / f"manifesto_download_publico_{timestamp}.json"
+        )
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
+        with path.open("x", encoding="utf-8") as output:
+            json.dump(manifest, output, ensure_ascii=False, indent=2)
         print(f"Manifesto: {path}")
         return 0
     except (HTTPError, URLError, TimeoutError, OSError) as exc:
