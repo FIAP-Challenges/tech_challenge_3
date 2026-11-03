@@ -104,6 +104,15 @@ docs/
 
 As imagens permitem consultar uma representação estática das páginas diretamente no repositório. O arquivo `.pbix` mantém o relatório interativo.
 
+## Acesso ao relatório online
+
+O relatório também está disponível para consulta pela web, por meio do Power BI Service.
+
+**Link público do relatório:** [[(https://app.powerbi.com/view?r=eyJrIjoiMjQzMGI0OWMtNDA3Zi00ZjFiLWI1NTYtOTE5MTRhMmE3ODlhIiwidCI6IjExZGJiZmUyLTg5YjgtNDU0OS1iZTEwLWNlYzM2NGU1OTU1MSIsImMiOjR9)]
+
+A versão publicada permite navegar pelas cinco páginas e interagir com os filtros e indicadores disponíveis, sem necessidade de instalar o Power BI Desktop.
+
+O acesso online destina-se à visualização dos resultados. Para editar o relatório ou atualizar suas fontes de dados, é necessário utilizar o arquivo `.pbix` e possuir acesso às fontes correspondentes.
 - [Panorama da alfabetização](power_BI/imagens/01_panorama_da_alfabetização.png)
 - [Municípios e metas](power_BI/imagens/02_municipios_e_metas.png)
 - [Infraestrutura escolar](power_BI/imagens/03_infraestrutura_escolar.png)
