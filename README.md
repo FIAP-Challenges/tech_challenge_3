@@ -256,31 +256,50 @@ Para instalação local, requisitos de hardware, validação, logs, parada e rec
 
 ## Estrutura do repositório
 
+A árvore abaixo resume a estrutura principal de entrega. Cada nível de recuo representa uma subpasta; arquivos de documentação das fontes ficam em `docs/dados/`, enquanto as bases ficam em `dados/`.
+
 ```text
 tech_challenge_3/
-|-- notebooks/
-|   |-- TC3_Pipeline_Completo_Alfabetizacao.ipynb
-|   |-- fase_2_entendimento_base_dados/
-|   |-- fase_3_analise_exploratoria_de_dados/
-|   |-- fase_4_preparacao/
-|   |-- fase_5_modelagem/
-|   |-- fase_6_otimizacao/
-|   `-- fase_7_avaliacao_independente/
-|-- dados/
-|   |-- fontes_originais/
-|   |-- dados_processados/
-|   `-- dados_analiticos/
-|-- modelos/
-|-- resultados/
-|   |-- metricas/
-|   |-- tabelas/
-|   |-- figuras/
-|   `-- relatorios/
-|-- docs/
-|-- Dockerfile
-|-- Dockerfile.gpu
-|-- compose.yaml
-`-- requirements.txt
+├── notebooks/
+│   ├── TC3_Pipeline_Completo_Alfabetizacao.ipynb
+│   ├── TC3_Analise_Gerencial_Random_Forest.ipynb
+│   ├── TC3_Visualizacoes_e_Insights.ipynb
+│   ├── fase_2_entendimento_base_dados/
+│   ├── fase_3_analise_exploratoria_de_dados/
+│   ├── fase_4_preparacao/
+│   ├── fase_5_modelagem/
+│   ├── fase_6_otimizacao/
+│   └── fase_7_avaliacao_independente/
+├── dados/
+│   ├── fontes_originais/
+│   ├── dados_processados/
+│   └── dados_analiticos/
+├── modelos/
+├── resultados/
+│   ├── metricas/
+│   ├── tabelas/
+│   ├── figuras/
+│   └── relatorios/
+├── docs/
+│   ├── INDICE.md
+│   ├── apresentacao/
+│   ├── dados/
+│   ├── data_dictionary/
+│   ├── jira/
+│   ├── power_BI/
+│   │   ├── TC3_Alfabetizacao.pbix
+│   │   └── imagens/
+│   └── resultados/
+├── scripts/
+│   ├── download_public_sources.py
+│   └── limpar_artefatos_gerados.py
+├── Dockerfile
+├── Dockerfile.gpu
+├── compose.yaml
+├── requirements.txt
+├── requirements-cpu.txt
+├── requirements-gpu.txt
+└── ENTREGA_TC3.TXT
 ```
 
 Documentos específicos das pastas:
